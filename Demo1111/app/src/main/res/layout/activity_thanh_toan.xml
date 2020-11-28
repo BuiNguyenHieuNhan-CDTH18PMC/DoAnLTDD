@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/imagephim"
+                android:layout_width="wrap_content"
+                android:layout_height="172dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="230dp"
+                app:srcCompat="@drawable/logo_cgv" />
+
+            <EditText
+                android:id="@+id/editten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="195dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/imagephim"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Tên Phim"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.975"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.023" />
+
+            <EditText
+                android:id="@+id/editngay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editten"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="195dp"
+                android:layout_marginLeft="27dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Ngày Chiếu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.98"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.078" />
+
+            <EditText
+                android:id="@+id/editphong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editngay"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="195dp"
+                android:layout_marginLeft="27dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Phòng Chiếu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.98"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.131" />
+
+            <EditText
+                android:id="@+id/editsuat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editphong"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="195dp"
+                android:layout_marginLeft="27dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Suất Chiếu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.985"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.196" />
+
+            <EditText
+                android:id="@+id/editghe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editsuat"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="195dp"
+                android:layout_marginLeft="27dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Ghế"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.266" />
+
+            <TextView
+                android:id="@+id/txttongket"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/editghe"
+                android:background="#E91E63"
+                android:gravity="center_vertical"
+                android:text="Tổng Kết"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.338" />
+
+            <TextView
+                android:id="@+id/txtgiave"
+                android:layout_width="184dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/txttongket"
+                android:gravity="center"
+                android:text="Giá Vé"
+                android:layout_marginTop="5dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.079"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.409" />
+
+
+            <TextView
+                android:id="@+id/txtgia"
+                android:layout_width="102dp"
+                android:layout_height="26dp"
+                android:layout_below="@id/txttongket"
+                android:layout_marginLeft="106dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/txtgiave"
+                android:text="75000 đ"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.886"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.441" />
+
+            <TextView
+                android:id="@+id/txtsoluong"
+                android:layout_width="184dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/txtgiave"
+                android:gravity="center"
+                android:text="Số Lượng"
+                android:layout_marginTop="5dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.079"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.466" />
+
+
+            <TextView
+                android:id="@+id/txtso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtgia"
+                android:layout_marginLeft="155dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/txtsoluong"
+                android:text="2"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.849"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.503" />
+
+            <TextView
+                android:id="@+id/txttongtien"
+                android:layout_width="184dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/txtsoluong"
+                android:gravity="center"
+                android:text="Tổng Tiền"
+                android:layout_marginTop="5dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.07"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.53" />
+
+            <TextView
+                android:id="@+id/txttong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtso"
+                android:layout_marginLeft="99dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/txttongtien"
+                android:text="150.000 đ"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.901"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.53" />
+
+            <TextView
+                android:id="@+id/txthinhthuc"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/txttongtien"
+                android:background="#E91E63"
+                android:gravity="center_vertical"
+                android:text="Hình Thức Thanh Toán"
+                android:textColor="@color/white"
+                android:layout_marginTop="10dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.613" />
+
+
+            <ImageButton
+                android:id="@+id/imagemomo"
+                android:layout_width="140dp"
+                android:layout_height="88dp"
+                android:layout_below="@id/txthinhthuc"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="68dp"
+                android:layout_marginRight="68dp"
+                android:onClick="ThanhToan"
+                android:scaleType="fitCenter"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.201"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.734"
+                app:srcCompat="@drawable/momo_logo" />
+
+            <ImageView
+                android:id="@+id/imagezalopay"
+                android:layout_width="140dp"
+                android:layout_height="88dp"
+                android:layout_below="@id/imagemomo"
+                android:layout_marginTop="63dp"
+                app:srcCompat="@drawable/zalopay" />
+
+            <ImageButton
+                android:onClick="ThanhToan"
+                android:id="@+id/imageviettelpay"
+                android:layout_width="140dp"
+                android:layout_height="88dp"
+                android:layout_below="@id/txthinhthuc"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/imagemomo"
+                app:srcCompat="@drawable/viettelpay"
+                android:scaleType="fitCenter"
+                android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/imageairpay"
+                android:layout_width="140dp"
+                android:layout_height="88dp"
+                android:layout_below="@id/imageviettelpay"
+                android:layout_marginLeft="76dp"
+                android:layout_marginTop="63dp"
+                android:layout_toRightOf="@id/imagezalopay"
+                app:srcCompat="@drawable/airpay" />
+
+            <Button
+                android:id="@+id/txtthanhtoan"
+                android:layout_width="228dp"
+                android:layout_height="46dp"
+                android:layout_below="@id/imagezalopay"
+                android:layout_marginTop="15dp"
+                android:background="#F41820"
+                android:gravity="center"
+                android:text="Thanh Toán"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:backgroundTint="#F12D2D"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.601"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.991" />
+        </RelativeLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
+
