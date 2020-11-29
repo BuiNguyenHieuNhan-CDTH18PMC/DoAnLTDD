@@ -15,8 +15,6 @@ import com.example.demo11_11.R;
 
 
 public class ThongTin extends Fragment {
-    MediaController media;
-    int position = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -31,14 +31,15 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.01" />
 
-            <ImageView
-                android:id="@+id/Hinh_Anh"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="140dp"
                 android:layout_height="88dp"
                 android:paddingBottom="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/txtnguontien"
-                app:srcCompat="@drawable/momo_logo" />
+                tools:listitem="@layout/imagethanhtoan_item"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
 
             <Button
                 android:id="@+id/btnthaydoi"
@@ -47,7 +48,7 @@
                 android:layout_below="@id/txtnguontien"
                 android:layout_marginLeft="106dp"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@id/Hinh_Anh"
+                android:layout_toRightOf="@id/recyclerView"
                 android:paddingBottom="10dp"
                 android:text="THAY ĐỔI"
                 android:textColor="#3F51B5"
@@ -64,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@id/Hinh_Anh"
+                android:layout_below="@id/recyclerView"
                 android:background="#D6D4D4"
                 android:paddingBottom="10dp"
                 android:text="CHI TIẾT GIAO DỊCH"
