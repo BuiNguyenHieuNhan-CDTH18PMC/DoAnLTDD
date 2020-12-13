@@ -31,23 +31,29 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.01" />
 
-            <ImageView
-                android:id="@+id/Hinh_Anh"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerHinhAnh"
                 android:layout_width="140dp"
                 android:layout_height="88dp"
-                android:paddingBottom="10dp"
-                android:layout_marginTop="10dp"
                 android:layout_below="@id/txtnguontien"
-                app:srcCompat="@drawable/momo_logo" />
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="246dp"
+                android:paddingBottom="10dp"
+                tools:listitem="@layout/imagethanhtoan_item" />
 
             <Button
                 android:id="@+id/btnthaydoi"
                 android:layout_width="135dp"
                 android:layout_height="71dp"
                 android:layout_below="@id/txtnguontien"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="246dp"
                 android:layout_marginLeft="106dp"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@id/Hinh_Anh"
+                android:layout_marginEnd="30dp"
+                android:layout_toRightOf="@id/recyclerHinhAnh"
                 android:paddingBottom="10dp"
                 android:text="THAY ĐỔI"
                 android:textColor="#3F51B5"
@@ -64,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@id/Hinh_Anh"
+                android:layout_below="@id/recyclerHinhAnh"
                 android:background="#D6D4D4"
                 android:paddingBottom="10dp"
                 android:text="CHI TIẾT GIAO DỊCH"

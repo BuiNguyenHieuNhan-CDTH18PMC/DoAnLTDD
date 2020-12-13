@@ -1,8 +1,11 @@
 package com.example.demo11_11.DangNhap;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Authenticator;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.demo11_11.GridView.Main_Ds_Phim;
 import com.example.demo11_11.MainActivity;
 import com.example.demo11_11.R;
 
@@ -31,7 +35,8 @@ import java.util.Map;
 public class Form_Dang_Nhap extends AppCompatActivity {
     EditText tk, mk;
     Button btn;
-    private String url = "http://192.168.1.7/api_doan/KT_dn.php";
+    String textdn = "ĐĂNG NHẬP THÀNH CÔNG";
+    private String url = "http://192.168.1.103/api_doan/KT_dn.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +65,8 @@ public class Form_Dang_Nhap extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 if(response.equals("Login success")){
-                    Toast.makeText(Form_Dang_Nhap.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Form_Dang_Nhap.this, MainActivity.class);
+                    Bundle bundle = new Bundle();
                 }
                 else {
                     Toast.makeText(Form_Dang_Nhap.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();

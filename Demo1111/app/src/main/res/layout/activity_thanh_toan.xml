@@ -266,13 +266,16 @@
                 android:layout_width="140dp"
                 android:layout_height="88dp"
                 android:layout_below="@id/txthinhthuc"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="37dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="68dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginEnd="234dp"
                 android:layout_marginRight="68dp"
+                android:background="@color/white"
                 android:onClick="ThanhToan"
                 android:scaleType="fitCenter"
-                android:background="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.201"
@@ -281,55 +284,52 @@
                 app:layout_constraintVertical_bias="0.734"
                 app:srcCompat="@drawable/momo_logo" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imagezalopay"
                 android:layout_width="140dp"
                 android:layout_height="88dp"
                 android:layout_below="@id/imagemomo"
-                android:layout_marginTop="63dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="54dp"
+                android:layout_marginEnd="234dp"
+                android:background="@color/white"
+                android:onClick="ThanhToan"
+                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/zalopay" />
 
             <ImageButton
-                android:onClick="ThanhToan"
                 android:id="@+id/imageviettelpay"
                 android:layout_width="140dp"
                 android:layout_height="88dp"
                 android:layout_below="@id/txthinhthuc"
-                android:layout_marginTop="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="208dp"
+                android:layout_marginLeft="89dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginEnd="42dp"
                 android:layout_toRightOf="@id/imagemomo"
-                app:srcCompat="@drawable/viettelpay"
+                android:background="@color/white"
+                android:onClick="ThanhToan"
                 android:scaleType="fitCenter"
-                android:background="@color/white"/>
+                app:srcCompat="@drawable/viettelpay" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageairpay"
-                android:layout_width="140dp"
-                android:layout_height="88dp"
+                android:layout_width="154dp"
+                android:layout_height="89dp"
                 android:layout_below="@id/imageviettelpay"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="216dp"
                 android:layout_marginLeft="76dp"
-                android:layout_marginTop="63dp"
+                android:layout_marginTop="62dp"
                 android:layout_toRightOf="@id/imagezalopay"
+                android:background="@color/white"
+                android:onClick="ThanhToan"
+                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/airpay" />
-
-            <Button
-                android:id="@+id/txtthanhtoan"
-                android:layout_width="228dp"
-                android:layout_height="46dp"
-                android:layout_below="@id/imagezalopay"
-                android:layout_marginTop="15dp"
-                android:background="#F41820"
-                android:gravity="center"
-                android:text="Thanh Toán"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:backgroundTint="#F12D2D"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.601"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.991" />
         </RelativeLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

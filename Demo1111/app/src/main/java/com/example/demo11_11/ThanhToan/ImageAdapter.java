@@ -45,7 +45,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHoler> {
         ImageView imageView;
         public ViewHoler(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.imageView3);
+            imageView = itemView.findViewById(R.id.imageHinhThucThanhToan);
         }
     }
 }
