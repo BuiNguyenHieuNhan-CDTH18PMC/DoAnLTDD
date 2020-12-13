@@ -38,7 +38,7 @@
                 android:paddingBottom="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_below="@id/txtnguontien"
-                app:srcCompat="@drawable/momo_logo" />
+                app:srcCompat="@drawable/viettelpay" />
 
             <Button
                 android:id="@+id/btnthaydoi"

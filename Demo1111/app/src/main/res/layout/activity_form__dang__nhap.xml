@@ -22,7 +22,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edit_Mk"
+        android:id="@+id/edit_formDN_mk"
         android:layout_width="178dp"
         android:layout_height="55dp"
         android:ems="10"
@@ -37,7 +37,7 @@
         app:layout_constraintVertical_bias="0.418" />
 
     <EditText
-        android:id="@+id/edit_Mk2"
+        android:id="@+id/edit_formDN_tk"
         android:layout_width="178dp"
         android:layout_height="55dp"
         android:ems="10"

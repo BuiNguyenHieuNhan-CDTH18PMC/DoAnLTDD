@@ -281,16 +281,13 @@
                 app:layout_constraintVertical_bias="0.734"
                 app:srcCompat="@drawable/momo_logo" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imagezalopay"
                 android:layout_width="140dp"
                 android:layout_height="88dp"
                 android:layout_below="@id/imagemomo"
                 android:layout_marginTop="63dp"
-                app:srcCompat="@drawable/zalopay"
-                android:onClick="ThanhToan"
-                android:scaleType="fitCenter"
-                android:background="@color/white"/>
+                app:srcCompat="@drawable/zalopay" />
 
             <ImageButton
                 android:onClick="ThanhToan"
@@ -302,9 +299,9 @@
                 android:layout_toRightOf="@id/imagemomo"
                 app:srcCompat="@drawable/viettelpay"
                 android:scaleType="fitCenter"
-                android:background="@color/white" />
+                android:background="@color/white"/>
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageairpay"
                 android:layout_width="140dp"
                 android:layout_height="88dp"
@@ -312,10 +309,7 @@
                 android:layout_marginLeft="76dp"
                 android:layout_marginTop="63dp"
                 android:layout_toRightOf="@id/imagezalopay"
-                app:srcCompat="@drawable/airpay"
-                android:onClick="ThanhToan"
-                android:scaleType="fitCenter"
-                android:background="@color/white"/>
+                app:srcCompat="@drawable/airpay" />
 
             <Button
                 android:id="@+id/txtthanhtoan"
