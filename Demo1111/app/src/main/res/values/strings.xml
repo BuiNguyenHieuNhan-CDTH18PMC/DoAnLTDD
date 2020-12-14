@@ -11,4 +11,6 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="NoiDungPhim">Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần đoàn kết.
+        Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắn khít của họ bắt đầu lay chuyển.</string>
 </resources>
