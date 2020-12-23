@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_DangKi"
-        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintVertical_bias="0.044"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -49,11 +49,11 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_formDK_TK"
-        app:layout_constraintVertical_bias="0.069"
+        app:layout_constraintVertical_bias="0.029"
         tools:ignore="MissingConstraints" />
+
 
     <EditText
         android:id="@+id/edit_formDK_SDT"
@@ -68,26 +68,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_formDK_MK"
-        app:layout_constraintVertical_bias="0.073"
+        app:layout_constraintVertical_bias="0.033"
         tools:ignore="MissingConstraints" />
 
+
     <EditText
-        android:id="@+id/edit_formDK_Email"
+        android:id="@+id/edit_formDK_Ho_Ten"
         android:layout_width="183dp"
         android:layout_height="46dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:hint="Email"
+        android:hint="Họ và tên"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_formDK_SDT"
-        app:layout_constraintVertical_bias="0.105"
+        app:layout_constraintVertical_bias="0.035"
         tools:ignore="MissingConstraints" />
-
-
 
     <Button
         android:id="@+id/button"
@@ -96,15 +95,17 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:onClick="dangki"
         android:text="Đăng kí"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_formDK_Email"
-        tools:ignore="MissingConstraints"
-        android:onClick="dangki"/>
+        app:layout_constraintTop_toBottomOf="@+id/edit_formDK_Ngay_Sinh"
+        app:layout_constraintVertical_bias="0.671"
+        tools:ignore="MissingConstraints" />
 
     <RadioGroup
         android:id="@+id/group"
@@ -114,8 +115,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.326"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.725">
+        app:layout_constraintTop_toBottomOf="@+id/edit_formDK_Ngay_Sinh"
+        app:layout_constraintVertical_bias="0.122">
 
         <RadioButton
             android:id="@+id/nam"
@@ -133,6 +134,19 @@
             tools:layout_editor_absoluteX="123dp"
             tools:layout_editor_absoluteY="501dp" />
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/edit_formDK_Ngay_Sinh"
+        android:layout_width="184dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="YYYY-MM-DD"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_formDK_Ho_Ten" />
 
 
 </android.support.constraint.ConstraintLayout>

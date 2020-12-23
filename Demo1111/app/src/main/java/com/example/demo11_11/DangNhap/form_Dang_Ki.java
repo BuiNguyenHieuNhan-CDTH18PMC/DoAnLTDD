@@ -22,11 +22,12 @@ import com.android.volley.toolbox.Volley;
 import com.example.demo11_11.MainActivity;
 import com.example.demo11_11.R;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class form_Dang_Ki extends AppCompatActivity {
-    EditText tk, mk, sdt, email;
+    EditText tk, mk, sdt, name, date;
     RadioGroup radioGroup;
     Button dk;
     @SuppressLint("WrongViewCast")
@@ -37,21 +38,23 @@ public class form_Dang_Ki extends AppCompatActivity {
         tk = findViewById(R.id.edit_formDK_TK);
         mk = findViewById(R.id.edit_formDK_MK);
         sdt = findViewById(R.id.edit_formDK_SDT);
-        email = findViewById(R.id.edit_formDK_Email);
+        name = findViewById(R.id.edit_formDK_Ho_Ten);
+        date = findViewById(R.id.edit_formDK_Ngay_Sinh);
         radioGroup = findViewById(R.id.group);
 
         dk = findViewById(R.id.button);
         dk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String taikhoan, matkhau, sodt, Email;
+                String taikhoan, matkhau, sodt, ten, ngaysinh;
                 taikhoan = tk.getText().toString();
                 matkhau = mk.getText().toString();
                 sodt = sdt.getText().toString();
-                Email = email.getText().toString();
+                ten = name.getText().toString();
+                ngaysinh = date.getText().toString();
                 int checkradio = radioGroup.getCheckedRadioButtonId();
                 RadioButton radioButton = radioGroup.findViewById(checkradio);
-                if(taikhoan.isEmpty() ||matkhau.isEmpty() ||sodt.isEmpty()||Email.isEmpty()){
+                if(taikhoan.isEmpty() ||matkhau.isEmpty() ||sodt.isEmpty()||ten.isEmpty()||ngaysinh.isEmpty()){
                     Toast.makeText(form_Dang_Ki.this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 }
                 else {
@@ -60,14 +63,14 @@ public class form_Dang_Ki extends AppCompatActivity {
                     }
                     else {
                         String gioitinh = radioButton.getText().toString();
-                        DK(taikhoan, matkhau, sodt, Email, gioitinh);
+                        DK(taikhoan, matkhau, sodt, ten, ngaysinh, gioitinh);
                     }
                 }
             }
         });
 
     }
-    public void DK(String taikhoan, String matkhau, String sdt, String email, String gioitinh){
+    public void DK(String taikhoan, String matkhau, String sdt, String ten, String ngaysinh, String gioitinh){
         String url = "http://192.168.1.103/api_doan/dangki.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -90,11 +93,12 @@ public class form_Dang_Ki extends AppCompatActivity {
         }){
             protected Map<String, String> getParams() throws AuthFailureError{
                 Map<String, String> parmas = new HashMap<>();
-                parmas.put("taikhoan",taikhoan);
-                parmas.put("matkhau",matkhau);
+                parmas.put("ho_ten",ten);
+                parmas.put("gioi_tinh",gioitinh);
+                parmas.put("ngay_sinh",ngaysinh);
                 parmas.put("sdt",sdt);
-                parmas.put("email",email);
-                parmas.put("gioitinh",gioitinh);
+                parmas.put("tai_khoan",taikhoan);
+                parmas.put("mat_khau",matkhau);
 
                 return parmas;
             }

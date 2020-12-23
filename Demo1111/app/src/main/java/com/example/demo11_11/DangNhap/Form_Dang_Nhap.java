@@ -35,21 +35,25 @@ import java.util.Map;
 public class Form_Dang_Nhap extends AppCompatActivity {
     EditText tk, mk;
     Button btn;
-    String textdn = "ĐĂNG NHẬP THÀNH CÔNG";
+    //đường dẫn ipv4 điều đến thư mục chứ file php trong thư mục www của wamp
+    //<-- manifests thêm <uses-permission android:name="android.permission.INTERNET"/>
+    //tạo thêm thư mục xml trong res tạo xml networksecurityconfig
     private String url = "http://192.168.1.103/api_doan/KT_dn.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form__dang__nhap);
+        //lấy EditText
         tk = findViewById(R.id.edit_formDN_tk);
         mk = findViewById(R.id.edit_formDN_mk);
         btn = findViewById(R.id.bth_DN);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //tạo string de giu gia tri nhap trong EditText
                 String taikhoan=tk.getText().toString().trim();
                 String matkhau=mk.getText().toString().trim();
-
+                //kiểm tra string do ó null ko
                 if (taikhoan.isEmpty()||matkhau.isEmpty()){
                     Toast.makeText(getApplicationContext(),"VUi LÒNG NHẬP ĐẦY ĐỦ THÔNG TIN",Toast.LENGTH_LONG).show();
                 }else {
@@ -60,13 +64,16 @@ public class Form_Dang_Nhap extends AppCompatActivity {
 
     }
     public void DN(String url){
+        //cần để cài api bắt buộc (theo tôi)
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                //trong file php khi đăng nhập thành công trả ra 1 tu gì đó thì qua đây ghi y chang vậy
                 if(response.equals("Login success")){
+                    //này tôi gọi đến trang chính khi thành công
                     Intent intent = new Intent(Form_Dang_Nhap.this, MainActivity.class);
-                    Bundle bundle = new Bundle();
+                    startActivity(intent);
                 }
                 else {
                     Toast.makeText(Form_Dang_Nhap.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
@@ -80,8 +87,9 @@ public class Form_Dang_Nhap extends AppCompatActivity {
         }){
             protected Map<String , String> getParams() throws AuthFailureError{
                 Map<String,String> params=new HashMap<>();
-                params.put("taikhoan",tk.getText().toString().trim());
-                params.put("matkhau",mk.getText().toString().trim());
+                //"tai_khoan" theo $_POST['tai_khoan'] php
+                params.put("tai_khoan",tk.getText().toString().trim());
+                params.put("mat_khau",mk.getText().toString().trim());
 
                 return params;
             }
