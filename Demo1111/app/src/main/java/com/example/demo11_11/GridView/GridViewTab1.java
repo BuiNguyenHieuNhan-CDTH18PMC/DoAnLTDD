@@ -29,6 +29,11 @@ public class GridViewTab1 extends Fragment {
     private ArrayList<ListMovie> ListImage;
     private GridView gridView;
     private Intent intent;
+    public static String ANIME = "anime";
+    public static String CMB = "cbm";
+    public static String FOUR = "four";
+    public static String HOATHINH = "hh";
+    public static String TTM = "ttm";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,23 +60,28 @@ public class GridViewTab1 extends Fragment {
                 ListMovie listMovie = (ListMovie)object;
                 switch (listMovie.getImage()){
                     case R.drawable.anime:{
-                        Toast.makeText(getContext(), "Anime", Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getContext(), form_Chi_Tiet_Phim.class);
+                        intent.putExtra(ANIME,"anime");
                         break;
                     }
                     case R.drawable.chi_muoi_ba:{
-                        Toast.makeText(getContext(), "Chị mười ba", Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getContext(), form_Chi_Tiet_Phim.class);
+                        intent.putExtra(CMB,"cmb");
                         break;
                     }
                     case R.drawable.four:{
-                        Toast.makeText(getContext(), "Fantastic Four", Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getContext(), form_Chi_Tiet_Phim.class);
+                        intent.putExtra(FOUR,"four");
                         break;
                     }
                     case R.drawable.hoathinh:{
-                        Toast.makeText(getContext(), "Liên minh thú cưng", Toast.LENGTH_SHORT).show();
+                        intent = new Intent(getContext(), form_Chi_Tiet_Phim.class);
+                        intent.putExtra(HOATHINH,"hh");
                         break;
                     }
                     case R.drawable.tiec_trang_mau:{
                         intent = new Intent(getContext(), form_Chi_Tiet_Phim.class);
+                        intent.putExtra(TTM,"ttm");
                         break;
                     }
                     default:
