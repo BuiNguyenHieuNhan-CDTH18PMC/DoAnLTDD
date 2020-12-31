@@ -3,7 +3,7 @@
 <div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Danh sách nhân viên
+      Danh sách bình luận
     </div>
     <div class="table-responsive">
       <?php

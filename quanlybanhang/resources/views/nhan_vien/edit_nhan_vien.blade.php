@@ -11,7 +11,7 @@
                             }
                         ?>
                         <header class="panel-heading">
-                            Cập nhật phim
+                            Cập nhật thông tin nhân viên
                         </header>
                         <div class="panel-body">
                             <div class="position-center">

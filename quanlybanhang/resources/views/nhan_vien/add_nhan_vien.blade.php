@@ -11,7 +11,7 @@
                             }
                         ?>
                         <header class="panel-heading">
-                            Thêm phim
+                            Thêm nhân viên
                         </header>
                         <div class="panel-body">
                             <div class="position-center">
