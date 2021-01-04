@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 23, 2020 lúc 06:07 PM
+-- Thời gian đã tạo: Th1 04, 2021 lúc 01:22 PM
 -- Phiên bản máy phục vụ: 8.0.21
 -- Phiên bản PHP: 7.3.21
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `migrations`
@@ -51,7 +51,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2020_12_17_173455_tbl_user_manager', 6),
 (10, '2020_12_19_095530_tbl_phim', 7),
 (11, '2020_12_19_140522_tbl_thuoc', 8),
-(12, '2020_12_20_084728_tbl__nhan_vien', 9);
+(12, '2020_12_20_084728_tbl__nhan_vien', 9),
+(13, '2020_12_31_062520_tbl_rap', 10),
+(14, '2020_12_31_063541_tbl_rap', 11);
 
 -- --------------------------------------------------------
 
@@ -110,13 +112,6 @@ CREATE TABLE IF NOT EXISTS `tbl_binhluan` (
   KEY `fk_phim_id` (`phim_id`),
   KEY `fk_user_id` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `tbl_binhluan`
---
-
-INSERT INTO `tbl_binhluan` (`noi_dung_binhluan`, `danh_gia_phim`, `phim_id`, `user_id`) VALUES
-('Phim hay', 6, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -192,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `tbl_nhanvien` (
 --
 
 INSERT INTO `tbl_nhanvien` (`staff_id`, `staff_image`, `staff_ho_ten`, `staff_gioi_tinh`, `staff_ngay_sinh`, `staff_sdt`, `staff_dia_chi`, `staff_tai_khoan`, `staff_mat_khau`, `staff_cmnd`, `created_at`, `updated_at`) VALUES
-(2, 'chi_muoi_ba71.jpg', 'Bùi Minh Tài', 'Nữ', '2000-12-05', '1234567890', '123 abc', 'nhanvientai', '202cb962ac59075b964b07152d234b70', '15468234', NULL, NULL),
+(2, 'chi_muoi_ba71.jpg', 'Bùi Minh Tài', 'Nữ', '2000-12-05', '1234567890', '123 abc', 'nhanvientai', '21232f297a57a5a743894a0e4a801fc3', '15468234', NULL, NULL),
 (5, '', NULL, 'Nam', NULL, NULL, NULL, 'admin', '21232f297a57a5a743894a0e4a801fc3', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -206,25 +201,28 @@ CREATE TABLE IF NOT EXISTS `tbl_phim` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `phim_ten` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `phim_ngay_cong_chieu` date NOT NULL,
-  `phim_noi_dung` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phim_noi_dung` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `the_loai_id` int NOT NULL,
   `phim_dao_dien` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phim_dien_vien` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phim_quoc_gia` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phim_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phim_thoi_luong_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trang_thai_phim` int NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_id_the_loai` (`the_loai_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_phim`
 --
 
-INSERT INTO `tbl_phim` (`id`, `phim_ten`, `phim_ngay_cong_chieu`, `phim_noi_dung`, `the_loai_id`, `phim_dao_dien`, `phim_dien_vien`, `phim_quoc_gia`, `phim_image`, `phim_thoi_luong_id`, `created_at`, `updated_at`) VALUES
-(2, 'Hoạt hình', '2020-12-19', 'thiếu nhi', 4, 'a', 'a', 'Việt Nam', 'giadinhcroods99.jpg', '1 tiếng 30 phút', NULL, NULL);
+INSERT INTO `tbl_phim` (`id`, `phim_ten`, `phim_ngay_cong_chieu`, `phim_noi_dung`, `the_loai_id`, `phim_dao_dien`, `phim_dien_vien`, `phim_quoc_gia`, `phim_image`, `phim_thoi_luong_id`, `trang_thai_phim`, `created_at`, `updated_at`) VALUES
+(3, 'Tiệc Trăng Máu', '2020-12-26', 'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.', 3, 'Nguyễn Quang Dũng', 'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn , Thu Trang, Kiều Minh Tuấn, Kaity Nguyễn', 'Việt Nam', 'tiec_trang_mau98.jpg', '118 phút', 0, NULL, NULL),
+(4, 'Gia Đình Croods 2 : Kỷ Nguyên Mới (The Croods 2 : A New Age)', '2020-12-26', 'Gia đình croods 2 : Một kỷ nguyên mới - The Croods 2 : A New Age là phần tiếp nối tập phim trước được phát hành vào tháng 1 năm 2013, ghi dấu sự quay trở lại màn ảnh của gia đình tiền sử hài hước sau 7 năm vắng bóng. Bộ phim vẫn lấy chủ đề về gia đình làm trọng tâm, khai thác thêm các khía cạnh thời sự nóng hổi về nữ quyền và khuyến khích con người bảo vệ môi trường, chung sống hoà thuận với thiên nhiên.', 4, 'Joel Crawford', 'Nicolas Cage, Emma Stone, Ryan Reynolds, Kelly Marie Tran, Catherine Keener, Cloris Leachman, Clark Duke,...', 'Mỹ', 'giadinhcroods47.jpg', '96 phút', 0, NULL, NULL),
+(6, '', '0000-00-00', '', 0, '', '', '', 'https://raw.githubusercontent.com/BuiNguyenHieuNhan-CDTH18PMC/DoAnLTDD/master/quanlybanhang/public/Images/movie/chi_muoi_ba6.jpg', '', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -235,10 +233,42 @@ INSERT INTO `tbl_phim` (`id`, `phim_ten`, `phim_ngay_cong_chieu`, `phim_noi_dung
 DROP TABLE IF EXISTS `tbl_phong_chieu`;
 CREATE TABLE IF NOT EXISTS `tbl_phong_chieu` (
   `id` int NOT NULL,
+  `rap_id` int NOT NULL,
   `so_luong_day` int DEFAULT NULL,
   `so_luong_cot` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `rap_id` (`rap_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_phong_chieu`
+--
+
+INSERT INTO `tbl_phong_chieu` (`id`, `rap_id`, `so_luong_day`, `so_luong_cot`) VALUES
+(0, 1, 5, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_rap`
+--
+
+DROP TABLE IF EXISTS `tbl_rap`;
+CREATE TABLE IF NOT EXISTS `tbl_rap` (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+  `ten_rap` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dia_chi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_rap`
+--
+
+INSERT INTO `tbl_rap` (`id`, `ten_rap`, `dia_chi`, `created_at`, `updated_at`) VALUES
+(1, 'NNTL', 'TP.HCM', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -300,7 +330,6 @@ DROP TABLE IF EXISTS `tbl_ve`;
 CREATE TABLE IF NOT EXISTS `tbl_ve` (
   `id` int NOT NULL AUTO_INCREMENT,
   `ngay_ban` date DEFAULT NULL,
-  `tong_tien` int DEFAULT NULL,
   `phu_thu` int DEFAULT NULL,
   `suat_chieu_id` int DEFAULT NULL,
   `gia_ve_id` int DEFAULT NULL,
