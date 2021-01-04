@@ -8,26 +8,29 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerImageMovie extends RecyclerView.Adapter<RecyclerImageMovie.ViewHolder>{
-    private ArrayList<ImageMovie> dsAnh;
-    private LayoutInflater mInflater;
-    RecyclerImageMovie(Context context, ArrayList<ImageMovie> ds){
+    private List<ImageMovie> dsAnh;
+    private Context context;
+    RecyclerImageMovie(Context context, List<ImageMovie> ds){
         this.dsAnh = ds;
-        this.mInflater = LayoutInflater.from(context);
+        this.context = context;
     }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View view = mInflater.inflate(R.layout.image_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.image_item,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         ImageMovie image = dsAnh.get(i);
-        viewHolder.anh.setImageResource(image.getImage());
+        Picasso.with(context).load(image.phim_image).into(viewHolder.anh);
     }
 
     @Override
