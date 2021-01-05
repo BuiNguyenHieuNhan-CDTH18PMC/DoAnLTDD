@@ -27,7 +27,7 @@ public class ThongTin extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_thong_tin, container, false);
-        recyclerView = view.findViewById(R.id.rv_ThongTin);
+        /*recyclerView = view.findViewById(R.id.rv_ThongTin);
         Intent intent = getActivity().getIntent();
         ListThongTin = new ArrayList<>();
         if(intent!= null) {
@@ -95,7 +95,7 @@ public class ThongTin extends Fragment {
         }
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         adapter = new ThongTinRecyclerView(getContext(),ListThongTin);
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);*/
         return view;
     }
 }

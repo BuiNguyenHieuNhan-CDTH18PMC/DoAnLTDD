@@ -2,15 +2,13 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".GridView.GridViewTab1">
+    android:layout_height="match_parent">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <GridView
-        android:id="@+id/gridtab1"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_phim_tab1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="2">
-    </GridView>
+        tools:listitem="@layout/item_list_phim"/>
 </FrameLayout>

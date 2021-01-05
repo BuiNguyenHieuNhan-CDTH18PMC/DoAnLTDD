@@ -16,6 +16,7 @@ import java.util.List;
 public class RecyclerImageMovie extends RecyclerView.Adapter<RecyclerImageMovie.ViewHolder>{
     private List<ImageMovie> dsAnh;
     private Context context;
+
     RecyclerImageMovie(Context context, List<ImageMovie> ds){
         this.dsAnh = ds;
         this.context = context;
