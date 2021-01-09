@@ -17,11 +17,13 @@ import com.example.demo11_11.ChiTietPhim.ThongTin;
 import com.example.demo11_11.R;
 import com.squareup.picasso.Picasso;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class ImageMovieGridAdapter extends RecyclerView.Adapter<ImageMovieGridAdapter.ViewHolder>{
-    private List<ListMovie> listMovies;
+    private ArrayList<ListMovie> listMovies;
     private Context context;
     private OnItemClickListener mListener;
 
@@ -34,7 +36,7 @@ public class ImageMovieGridAdapter extends RecyclerView.Adapter<ImageMovieGridAd
         this.mListener = listener;
     }
 
-    ImageMovieGridAdapter(Context context, List<ListMovie> ds){
+    ImageMovieGridAdapter(Context context, ArrayList<ListMovie> ds){
         this.listMovies = ds;
         this.context = context;
     }
@@ -49,10 +51,10 @@ public class ImageMovieGridAdapter extends RecyclerView.Adapter<ImageMovieGridAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         ListMovie listMovie = listMovies.get(i);
-        viewHolder.tenphim.setText(listMovie.phim_ten);
-        viewHolder.theloai.setText(listMovie.ten_the_loai);
-        viewHolder.thoiluong.setText(listMovie.phim_thoi_luong_id);
-        Picasso.with(context).load(listMovie.phim_image).into(viewHolder.image);
+        viewHolder.tenphim.setText(listMovie.getPhim_ten());
+        viewHolder.theloai.setText(listMovie.getTen_the_loai());
+        viewHolder.thoiluong.setText(listMovie.getPhim_thoi_luong_id());
+        Picasso.with(context).load(listMovie.getPhim_image()).into(viewHolder.image);
     }
 
     @Override
