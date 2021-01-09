@@ -34,7 +34,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
-public class GridViewTab2 extends Fragment {
+public class GridViewTab2 extends Fragment implements ImageMovieGridAdapter.OnItemClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,11 +67,19 @@ public class GridViewTab2 extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        recyclerView.setAdapter(new ImageMovieGridAdapter(getContext(),ds));
+                        ImageMovieGridAdapter imageMovieGridAdapter = new ImageMovieGridAdapter(getContext(),ds);
+                        recyclerView.setAdapter(imageMovieGridAdapter);
+                        imageMovieGridAdapter.setOnItemClickListener(GridViewTab2.this);
                     }
                 });
             }
         });
         return view;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getContext(),form_Chi_Tiet_Phim.class);
+        startActivity(intent);
     }
 }

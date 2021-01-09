@@ -20,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.example.demo11_11.ChiTietPhim.ThongTin;
 import com.example.demo11_11.ChiTietPhim.form_Chi_Tiet_Phim;
 import com.example.demo11_11.MainActivity;
 import com.example.demo11_11.R;
@@ -39,11 +40,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class GridViewTab1 extends Fragment {
+public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnItemClickListener {
     private ImageMovieGridAdapter adapter;
-    private ArrayList<ListMovie> ListImage;
-    private GridView gridView;
-    private Intent intent;
+
     public static String ANIME = "anime";
     public static String CMB = "cbm";
     public static String FOUR = "four";
@@ -81,17 +80,19 @@ public class GridViewTab1 extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        recyclerView.setAdapter(new ImageMovieGridAdapter(getContext(),ds));
-                        recyclerView.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-
-                            }
-                        });
+                        ImageMovieGridAdapter imageMovieGridAdapter = new ImageMovieGridAdapter(getContext(),ds);
+                        recyclerView.setAdapter(imageMovieGridAdapter);
+                        imageMovieGridAdapter.setOnItemClickListener(GridViewTab1.this);
                     }
                 });
             }
         });
         return view;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getContext(),form_Chi_Tiet_Phim.class);
+        startActivity(intent);
     }
 }

@@ -15,7 +15,6 @@
         <activity android:name=".ThanhToan.ThanhToan" />
         <activity android:name=".DangNhap.form_Dang_Ki" />
         <activity android:name=".DangNhap.Form_Dang_Nhap" />
-        <activity android:name=".DangNhap.MainActivity" />
         <activity android:name=".GridView.Main_Ds_Phim" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,23 +1,38 @@
 package com.example.demo11_11.GridView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.demo11_11.ChiTietPhim.ThongTin;
 import com.example.demo11_11.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+
 public class ImageMovieGridAdapter extends RecyclerView.Adapter<ImageMovieGridAdapter.ViewHolder>{
     private List<ListMovie> listMovies;
     private Context context;
+    private OnItemClickListener mListener;
+
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.mListener = listener;
+    }
 
     ImageMovieGridAdapter(Context context, List<ListMovie> ds){
         this.listMovies = ds;
@@ -54,6 +69,19 @@ public class ImageMovieGridAdapter extends RecyclerView.Adapter<ImageMovieGridAd
             tenphim = itemView.findViewById(R.id.edit_phim_ten_lismovie);
             theloai = itemView.findViewById(R.id.edit_the_loai_lismovie);
             thoiluong = itemView.findViewById(R.id.edit_thoi_luong_lismovie);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(mListener != null){
+                        int position = getAdapterPosition();
+                        if(position!= RecyclerView.NO_POSITION){
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
+
     }
 }
