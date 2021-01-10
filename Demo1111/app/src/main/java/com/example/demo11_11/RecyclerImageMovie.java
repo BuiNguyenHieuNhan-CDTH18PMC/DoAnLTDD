@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerImageMovie extends RecyclerView.Adapter<RecyclerImageMovie.ViewHolder>{
-    private List<ImageMovie> dsAnh;
+    private ArrayList<ImageMovie> dsAnh;
     private Context context;
 
-    RecyclerImageMovie(Context context, List<ImageMovie> ds){
+    RecyclerImageMovie(Context context, ArrayList<ImageMovie> ds){
         this.dsAnh = ds;
         this.context = context;
     }
@@ -31,7 +31,7 @@ public class RecyclerImageMovie extends RecyclerView.Adapter<RecyclerImageMovie.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         ImageMovie image = dsAnh.get(i);
-        Picasso.with(context).load(image.phim_image).into(viewHolder.anh);
+        Picasso.with(context).load(image.getPhim_image()).into(viewHolder.anh);
     }
 
     @Override

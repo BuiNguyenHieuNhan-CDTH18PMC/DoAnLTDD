@@ -13,18 +13,32 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/edit_formBinhLuan_ND"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:ems="10"
+            android:hint="Nội dung"
+            android:inputType="textMultiLine" />
+
+        <EditText
+            android:id="@+id/edit_formBinhLuan_DG"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Điểm"
+            android:inputType="number" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_binhluan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Binh Luan" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/showbinhluan"
+            tools:listitem="@layout/item_binh_luan"/>
     </LinearLayout>
 
 </FrameLayout>

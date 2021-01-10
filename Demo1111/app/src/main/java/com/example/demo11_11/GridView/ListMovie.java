@@ -1,6 +1,7 @@
 package com.example.demo11_11.GridView;
 
 public class ListMovie {
+    private String id;
     private String phim_ten;
     private String ten_the_loai;
     private String phim_thoi_luong_id;
@@ -11,7 +12,8 @@ public class ListMovie {
     private String phim_dien_vien;
     private String phim_quoc_gia;
 
-    public ListMovie(String image, String ten, String tl, String thoiluong, String ngay, String nd, String dd, String dv, String qg){
+    public ListMovie(String id,String image, String ten, String tl, String thoiluong, String ngay, String nd, String dd, String dv, String qg){
+        this.id = id;
         this.phim_image = image;
         this.phim_ten = ten;
         this.ten_the_loai = tl;
@@ -93,6 +95,14 @@ public class ListMovie {
 
     public void setPhim_quoc_gia(String phim_quoc_gia) {
         this.phim_quoc_gia = phim_quoc_gia;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
 

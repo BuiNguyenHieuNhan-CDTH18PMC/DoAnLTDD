@@ -52,6 +52,7 @@ import okhttp3.OkHttpClient;
 import static android.widget.Toast.LENGTH_LONG;
 
 public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnItemClickListener {
+    public static String EXTRA_ID = "id";
     public static String EXTRA_NAME = "phim_ten";
     public static String EXTRA_IMAGE = "phim_image";
     public static String EXTRA_CONTENT  = "phim_noi_dung";
@@ -90,6 +91,7 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
                             try {
                                 jsonObject = response.getJSONObject(i);
 
+                                String id = jsonObject.getString("id");
                                 String image = jsonObject.getString("phim_image");
                                 String ten = jsonObject.getString("phim_ten");
                                 String theloai = jsonObject.getString("ten_the_loai");
@@ -100,7 +102,7 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
                                 String dv = jsonObject.getString("phim_dien_vien");
                                 String qg = jsonObject.getString("phim_quoc_gia");
 
-                                ListMovie listMovie = new ListMovie(image,ten,theloai,thoiluong,ngaychieu,nd,dd,dv,qg);
+                                ListMovie listMovie = new ListMovie(id,image,ten,theloai,thoiluong,ngaychieu,nd,dd,dv,qg);
                                 ds.add(listMovie);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -123,6 +125,7 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
     public void onItemClick(int position) {
         Intent intent = new Intent(getContext(),form_Chi_Tiet_Phim.class);
         ListMovie listMovie = ds.get(position);
+        intent.putExtra(EXTRA_ID,listMovie.getId());
         intent.putExtra(EXTRA_IMAGE,listMovie.getPhim_image());
         intent.putExtra(EXTRA_NAME,listMovie.getPhim_ten());
         intent.putExtra(EXTRA_CONTENT,listMovie.getPhim_noi_dung());

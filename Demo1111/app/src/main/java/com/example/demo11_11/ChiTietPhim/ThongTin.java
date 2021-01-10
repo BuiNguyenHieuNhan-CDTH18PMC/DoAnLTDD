@@ -44,7 +44,7 @@ public class ThongTin extends Fragment {
         String tenphim = intent.getStringExtra(EXTRA_NAME);
         String noidung = intent.getStringExtra(EXTRA_CONTENT);
         String ngaychieu = intent.getStringExtra(EXTRA_PREMIERE);
-        String tt = intent.getStringExtra(EXTRA_CATEGORY);
+        String theLoai = intent.getStringExtra(EXTRA_CATEGORY);
         String dd = intent.getStringExtra(EXTRA_DIRECTORS);
         String dv = intent.getStringExtra(EXTRA_CAST);
         String tl = intent.getStringExtra(EXTRA_TIME);
@@ -53,7 +53,6 @@ public class ThongTin extends Fragment {
         ImageView imageView = view.findViewById(R.id.image_formThongTin_anh);
         ten = view.findViewById(R.id.tv_formThongTin_TenPhim);
         nd = view.findViewById(R.id.tv_formThongTin_NoiDung);
-
         khoichieu = view.findViewById(R.id.edit_formThongTin_KhoiChieu);
         theloai = view.findViewById(R.id.edit_formThongTin_TheLoai);
         daodien = view.findViewById(R.id.edit_formThongTin_DaoDien);
@@ -62,15 +61,15 @@ public class ThongTin extends Fragment {
         quocgia = view.findViewById(R.id.edit_formThongTin_QuocGia);
 
         Picasso.with(getContext()).load(image).into(imageView);
-
         ten.setText(tenphim);
         nd.setText(noidung);
         khoichieu.setText(ngaychieu);
-        theloai.setText(tt);
+        theloai.setText(theLoai);
         daodien.setText(dd);
         dienvien.setText(dv);
         thoiluong.setText(tl);
         quocgia.setText(qg);
+
         return view;
     }
 }
