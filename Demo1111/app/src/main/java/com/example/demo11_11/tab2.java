@@ -75,5 +75,6 @@ public class tab2 extends Fragment {
                 Toast.makeText(getContext(), "Lỗi dữ liệu", Toast.LENGTH_SHORT).show();
             }
         });
+        requestQueue.add(jsonArrayRequest);
     }
 }

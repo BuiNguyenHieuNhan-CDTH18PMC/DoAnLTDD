@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
+            android:title="Thông tin"
+            android:id="@+id/drawer_thongtin"
+            />
+        <item
             android:id="@+id/drawer_dangnhap"
             android:icon="@android:drawable/ic_menu_myplaces"
             android:title="Đăng nhập" />
