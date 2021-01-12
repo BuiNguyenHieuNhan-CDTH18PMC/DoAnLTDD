@@ -28,6 +28,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -35,14 +36,17 @@ import java.util.Map;
 public class Form_Dang_Nhap extends AppCompatActivity {
     EditText tk, mk;
     Button btn;
+    ArrayList<User> ds;
     //đường dẫn ipv4 điều đến thư mục chứ file php trong thư mục www của wamp
     //<-- manifests thêm <uses-permission android:name="android.permission.INTERNET"/>
     //tạo thêm thư mục xml trong res tạo xml networksecurityconfig
+    public static String EXTRA_ID = "id";
     private String url = "http://192.168.1.106/api_doan/KT_dn.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form__dang__nhap);
+        ds = new ArrayList<>();
         //lấy EditText
         tk = findViewById(R.id.edit_formDN_tk);
         mk = findViewById(R.id.edit_formDN_mk);

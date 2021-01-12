@@ -11,6 +11,10 @@ public class User {
     private String tai_khoan;
     private String mat_khau;
 
+    public User(){
+
+    }
+
     public String getId() {
         return id;
     }
