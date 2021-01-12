@@ -64,7 +64,7 @@ public class GridViewTab1 extends Fragment {
         Type type = Types.newParameterizedType(List.class, ListMovie.class);
         final JsonAdapter<List<ListMovie>> jsonAdapter = moshi.adapter(type);
 
-        Request request = new Request.Builder().url("http://192.168.1.106/api_doan/show_movie_dang_chieu").build();
+        Request request = new Request.Builder().url("http://192.168.43.183/api_doan/show_movie_dang_chieu").build();
 
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override

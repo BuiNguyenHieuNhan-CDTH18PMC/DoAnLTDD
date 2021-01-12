@@ -43,7 +43,7 @@ public class tab1 extends Fragment {
 
         // Tạo request lên server.
         Request request = new Request.Builder()
-                .url("http://192.168.1.106/api_doan/show_movie_dang_chieu")
+                .url("http://192.168.43.183/api_doan/show_movie_dang_chieu")
                 .build();
 
         // Thực thi request.

@@ -71,7 +71,7 @@ public class form_Dang_Ki extends AppCompatActivity {
 
     }
     public void DK(String taikhoan, String matkhau, String sdt, String ten, String ngaysinh, String gioitinh){
-        String url = "http://192.168.1.103/api_doan/dangki.php";
+        String url = "http://192.168.43.183/api_doan/dangki.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

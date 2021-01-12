@@ -38,7 +38,7 @@ public class tab2 extends Fragment {
         Type usersType = Types.newParameterizedType(List.class, ImageMovie.class);
         final JsonAdapter<List<ImageMovie>> jsonAdapter = moshi.adapter(usersType);
 
-        Request request = new Request.Builder().url("http://192.168.1.106/api_doan/show_movie_sap_chieu").build();
+        Request request = new Request.Builder().url("http://192.168.43.183/api_doan/show_movie_sap_chieu").build();
 
         client.newCall(request).enqueue(new Callback() {
             @Override
