@@ -38,7 +38,11 @@ public class Form_Dang_Nhap extends AppCompatActivity {
     //đường dẫn ipv4 điều đến thư mục chứ file php trong thư mục www của wamp
     //<-- manifests thêm <uses-permission android:name="android.permission.INTERNET"/>
     //tạo thêm thư mục xml trong res tạo xml networksecurityconfig
+<<<<<<< HEAD
     private String url = "http://192.168.43.183/api_doan/KT_dn.php";
+=======
+    private String url = "http://192.168.1.106/api_doan/KT_dn.php";
+>>>>>>> 4f4b26e5af1b4b37b9f12b4755e36396e31e8ea2
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,14 +73,9 @@ public class Form_Dang_Nhap extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                //trong file php khi đăng nhập thành công trả ra 1 tu gì đó thì qua đây ghi y chang vậy
                 if(response.equals("Login success")){
-                    //này tôi gọi đến trang chính khi thành công
                     Intent intent = new Intent(Form_Dang_Nhap.this, MainActivity.class);
                     startActivity(intent);
-                }
-                else {
-                    Toast.makeText(Form_Dang_Nhap.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {

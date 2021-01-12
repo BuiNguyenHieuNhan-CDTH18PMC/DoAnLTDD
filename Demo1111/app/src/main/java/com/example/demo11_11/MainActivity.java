@@ -12,13 +12,12 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 import com.example.demo11_11.DangNhap.Form_Dang_Nhap;
 import com.example.demo11_11.DangNhap.form_Dang_Ki;
 import com.example.demo11_11.GridView.ListMovie;
 import com.example.demo11_11.GridView.Main_Ds_Phim;
+import com.example.demo11_11.InfoUser.form_Info_User;
 
 import java.util.ArrayList;
 
@@ -26,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private TabAdapter adapter;
-    RecyclerView recycler;
-    ArrayList<ListMovie> dsPhim;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private Intent intent;
@@ -61,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                         intent = new Intent(MainActivity.this, Main_Ds_Phim.class);
                         break;
                     }
+                    case R.id.drawer_thongtin:{
+                        intent = new Intent(MainActivity.this, form_Info_User.class);
+                    }
                 }
                 startActivity(intent);
                 drawerLayout.closeDrawers();
@@ -85,4 +85,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

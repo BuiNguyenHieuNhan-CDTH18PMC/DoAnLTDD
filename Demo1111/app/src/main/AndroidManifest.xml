@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.demo11_11">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:networkSecurityConfig="@xml/networksecurityconfig"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/networksecurityconfig"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Demo1111">
+        <activity android:name=".InfoUser.form_Thong_Tin"></activity>
+        <activity android:name=".InfoUser.form_Giao_dich" />
+        <activity android:name=".InfoUser.form_Info_User" />
         <activity android:name=".ChiTietPhim.form_Chi_Tiet_Phim" />
         <activity android:name=".ThanhToan.Thanh_Toan_Momo" />
         <activity android:name=".ThanhToan.ThanhToan" />
         <activity android:name=".DangNhap.form_Dang_Ki" />
         <activity android:name=".DangNhap.Form_Dang_Nhap" />
-        <activity android:name=".DangNhap.MainActivity" />
         <activity android:name=".GridView.Main_Ds_Phim" />
         <activity android:name=".MainActivity">
             <intent-filter>
