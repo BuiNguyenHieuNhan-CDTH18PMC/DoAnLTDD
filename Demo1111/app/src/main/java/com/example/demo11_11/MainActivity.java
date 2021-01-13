@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case R.id.drawer_thongtin:{
                         intent = new Intent(MainActivity.this, form_Info_User.class);
+                        break;
                     }
                 }
                 startActivity(intent);
