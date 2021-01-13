@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th1 13, 2021 lúc 09:56 AM
+-- Thời gian đã tạo: Th1 07, 2021 lúc 03:40 PM
 -- Phiên bản máy phục vụ: 5.7.31
 -- Phiên bản PHP: 7.3.21
 
@@ -112,13 +112,6 @@ CREATE TABLE IF NOT EXISTS `tbl_binhluan` (
   KEY `fk_phim_id` (`phim_id`),
   KEY `fk_user_id` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `tbl_binhluan`
---
-
-INSERT INTO `tbl_binhluan` (`noi_dung_binhluan`, `danh_gia_phim`, `phim_id`, `user_id`) VALUES
-('hay', 5, 3, 1);
 
 -- --------------------------------------------------------
 
