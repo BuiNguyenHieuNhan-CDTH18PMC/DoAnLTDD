@@ -79,7 +79,6 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
         return view;
     }
 
-<<<<<<< HEAD
         OkHttpClient okHttpClient = new OkHttpClient();
 
         Moshi moshi = new Moshi.Builder().build();
@@ -88,7 +87,7 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
 
         Request request = new Request.Builder().url("http://192.168.43.183/api_doan/show_movie_dang_chieu").build();
 
-        okHttpClient.newCall(request).enqueue(new Callback() {
+        okHttpClient.newCall(request).enqueue(new Callback()){
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.e("Error","Network Error");
@@ -101,64 +100,64 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
 
                 // Cho hiển thị lên RecyclerView.
                 getActivity().runOnUiThread(new Runnable() {
-=======
-    public void json(){
-        String url = "http://192.168.1.106/api_doan/show_movie_dang_chieu";
-        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONArray>() {
->>>>>>> 4f4b26e5af1b4b37b9f12b4755e36396e31e8ea2
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        JSONObject jsonObject = null;
-                        for (int i = 0; i < response.length(); i++) {
-                            try {
-                                jsonObject = response.getJSONObject(i);
 
-                                String id = jsonObject.getString("id");
-                                String image = jsonObject.getString("phim_image");
-                                String ten = jsonObject.getString("phim_ten");
-                                String theloai = jsonObject.getString("ten_the_loai");
-                                String thoiluong = jsonObject.getString("phim_thoi_luong_id");
-                                String ngaychieu = jsonObject.getString("phim_ngay_cong_chieu");
-                                String nd = jsonObject.getString("phim_noi_dung");
-                                String dd = jsonObject.getString("phim_dao_dien");
-                                String dv = jsonObject.getString("phim_dien_vien");
-                                String qg = jsonObject.getString("phim_quoc_gia");
+                    public void json() {
+                        String url = "http://192.168.1.106/api_doan/show_movie_dang_chieu";
+                        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+                        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                                new Response.Listener<JSONArray>() {
 
-                                ListMovie listMovie = new ListMovie(id,image,ten,theloai,thoiluong,ngaychieu,nd,dd,dv,qg);
-                                ds.add(listMovie);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                                    @Override
+                                    public void onResponse(JSONArray response) {
+                                        JSONObject jsonObject = null;
+                                        for (int i = 0; i < response.length(); i++) {
+                                            try {
+                                                jsonObject = response.getJSONObject(i);
+
+                                                String id = jsonObject.getString("id");
+                                                String image = jsonObject.getString("phim_image");
+                                                String ten = jsonObject.getString("phim_ten");
+                                                String theloai = jsonObject.getString("ten_the_loai");
+                                                String thoiluong = jsonObject.getString("phim_thoi_luong_id");
+                                                String ngaychieu = jsonObject.getString("phim_ngay_cong_chieu");
+                                                String nd = jsonObject.getString("phim_noi_dung");
+                                                String dd = jsonObject.getString("phim_dao_dien");
+                                                String dv = jsonObject.getString("phim_dien_vien");
+                                                String qg = jsonObject.getString("phim_quoc_gia");
+
+                                                ListMovie listMovie = new ListMovie(id, image, ten, theloai, thoiluong, ngaychieu, nd, dd, dv, qg);
+                                                ds.add(listMovie);
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                            adapter = new ImageMovieGridAdapter(getContext(), ds);
+                                            recyclerView.setAdapter(adapter);
+                                            adapter.setOnItemClickListener(GridViewTab1.this);
+                                        }
+                                    }
+                                }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(getContext(), "Lỗi", LENGTH_LONG).show();
                             }
-                            adapter = new ImageMovieGridAdapter(getContext(),ds);
-                            recyclerView.setAdapter(adapter);
-                            adapter.setOnItemClickListener(GridViewTab1.this);
-                        }
+                        });
+                        requestQueue.add(jsonArrayRequest);
                     }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "Lỗi", LENGTH_LONG).show();
-            }
-        });
-        requestQueue.add(jsonArrayRequest);
-    }
 
-    @Override
-    public void onItemClick(int position) {
-        Intent intent = new Intent(getContext(),form_Chi_Tiet_Phim.class);
-        ListMovie listMovie = ds.get(position);
-        intent.putExtra(EXTRA_ID,listMovie.getId());
-        intent.putExtra(EXTRA_IMAGE,listMovie.getPhim_image());
-        intent.putExtra(EXTRA_NAME,listMovie.getPhim_ten());
-        intent.putExtra(EXTRA_CONTENT,listMovie.getPhim_noi_dung());
-        intent.putExtra(EXTRA_PREMIERE, listMovie.getPhim_ngay_cong_chieu());
-        intent.putExtra(EXTRA_CATEGORY, listMovie.getTen_the_loai());
-        intent.putExtra(EXTRA_DIRECTORS, listMovie.getPhim_dao_dien());
-        intent.putExtra(EXTRA_CAST, listMovie.getPhim_dien_vien());
-        intent.putExtra(EXTRA_TIME, listMovie.getPhim_thoi_luong_id());
-        intent.putExtra(EXTRA_NATION, listMovie.getPhim_quoc_gia());
-        startActivity(intent);
-    }
-}
+                    @Override
+                    public void onItemClick(int position) {
+                        Intent intent = new Intent(getContext(), form_Chi_Tiet_Phim.class);
+                        ListMovie listMovie = ds.get(position);
+                        intent.putExtra(EXTRA_ID, listMovie.getId());
+                        intent.putExtra(EXTRA_IMAGE, listMovie.getPhim_image());
+                        intent.putExtra(EXTRA_NAME, listMovie.getPhim_ten());
+                        intent.putExtra(EXTRA_CONTENT, listMovie.getPhim_noi_dung());
+                        intent.putExtra(EXTRA_PREMIERE, listMovie.getPhim_ngay_cong_chieu());
+                        intent.putExtra(EXTRA_CATEGORY, listMovie.getTen_the_loai());
+                        intent.putExtra(EXTRA_DIRECTORS, listMovie.getPhim_dao_dien());
+                        intent.putExtra(EXTRA_CAST, listMovie.getPhim_dien_vien());
+                        intent.putExtra(EXTRA_TIME, listMovie.getPhim_thoi_luong_id());
+                        intent.putExtra(EXTRA_NATION, listMovie.getPhim_quoc_gia());
+                        startActivity(intent);
+                    }
+        }

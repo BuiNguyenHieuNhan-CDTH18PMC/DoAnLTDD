@@ -71,11 +71,10 @@ public class form_Dang_Ki extends AppCompatActivity {
 
     }
     public void DK(String taikhoan, String matkhau, String sdt, String ten, String ngaysinh, String gioitinh){
-<<<<<<< HEAD
         String url = "http://192.168.43.183/api_doan/dangki.php";
-=======
-        String url = "http://192.168.1.106/api_doan/dangki.php";
->>>>>>> 4f4b26e5af1b4b37b9f12b4755e36396e31e8ea2
+
+
+
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

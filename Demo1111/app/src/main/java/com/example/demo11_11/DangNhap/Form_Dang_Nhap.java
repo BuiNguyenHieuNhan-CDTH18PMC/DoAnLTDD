@@ -38,11 +38,9 @@ public class Form_Dang_Nhap extends AppCompatActivity {
     //đường dẫn ipv4 điều đến thư mục chứ file php trong thư mục www của wamp
     //<-- manifests thêm <uses-permission android:name="android.permission.INTERNET"/>
     //tạo thêm thư mục xml trong res tạo xml networksecurityconfig
-<<<<<<< HEAD
+
     private String url = "http://192.168.43.183/api_doan/KT_dn.php";
-=======
-    private String url = "http://192.168.1.106/api_doan/KT_dn.php";
->>>>>>> 4f4b26e5af1b4b37b9f12b4755e36396e31e8ea2
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
