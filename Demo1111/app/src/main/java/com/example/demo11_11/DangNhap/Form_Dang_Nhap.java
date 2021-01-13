@@ -18,11 +18,13 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Authenticator;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.demo11_11.GridView.Main_Ds_Phim;
 import com.example.demo11_11.MainActivity;
 import com.example.demo11_11.R;
+import com.squareup.moshi.Json;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,7 +42,9 @@ public class Form_Dang_Nhap extends AppCompatActivity {
     //đường dẫn ipv4 điều đến thư mục chứ file php trong thư mục www của wamp
     //<-- manifests thêm <uses-permission android:name="android.permission.INTERNET"/>
     //tạo thêm thư mục xml trong res tạo xml networksecurityconfig
-    public static String EXTRA_ID = "id";
+    public static String EXTRA_IDUSER = "id_user";
+    public static String EXTRA_NAME = "ho_ten";
+    public static String EXTRA_USERNAME = "tai_khoan";
     private String url = "http://192.168.1.106/api_doan/KT_dn.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,10 +77,27 @@ public class Form_Dang_Nhap extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                if(response.equals("Login success")){
-                    Intent intent = new Intent(Form_Dang_Nhap.this, MainActivity.class);
-                    startActivity(intent);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String success = jsonObject.getString("success");
+                    String message = jsonObject.getString("message");
+                    String iduser = jsonObject.getString("id_user");
+                    String hoten = jsonObject.getString("ho_ten");
+                    String taikhoan = jsonObject.getString("tai_khoan");
+                    if(success.equals("1")){
+                        Intent intent1 = new Intent(Form_Dang_Nhap.this,MainActivity.class);
+                        intent1.putExtra(EXTRA_IDUSER,iduser);
+                        intent1.putExtra(EXTRA_NAME,hoten);
+                        intent1.putExtra(EXTRA_USERNAME,taikhoan);
+                        startActivity(intent1);
+                    }
+                    if(success.equals("0")){
+                        Toast.makeText(Form_Dang_Nhap.this, message, Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
+
             }
         }, new Response.ErrorListener() {
             @Override

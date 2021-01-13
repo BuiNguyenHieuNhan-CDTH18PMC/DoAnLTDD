@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.demo11_11.GridView.GridViewTab1;
 import com.example.demo11_11.GridView.GridViewTab2;
@@ -19,15 +20,16 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import static com.example.demo11_11.GridView.GridViewTab2.EXTRA_CAST;
-import static com.example.demo11_11.GridView.GridViewTab2.EXTRA_CATEGORY;
-import static com.example.demo11_11.GridView.GridViewTab2.EXTRA_CONTENT;
-import static com.example.demo11_11.GridView.GridViewTab2.EXTRA_DIRECTORS;
-import static com.example.demo11_11.GridView.GridViewTab2.EXTRA_IMAGE;
-import static com.example.demo11_11.GridView.GridViewTab2.EXTRA_NAME;
-import static com.example.demo11_11.GridView.GridViewTab2.EXTRA_NATION;
-import static com.example.demo11_11.GridView.GridViewTab2.EXTRA_PREMIERE;
-import static com.example.demo11_11.GridView.GridViewTab2.EXTRA_TIME;
+import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_CAST;
+import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_CATEGORY;
+import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_CONTENT;
+import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_DIRECTORS;
+import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_ID;
+import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_IMAGE;
+import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_NAME;
+import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_NATION;
+import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_PREMIERE;
+import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_TIME;
 
 
 public class ThongTin extends Fragment {
@@ -69,7 +71,6 @@ public class ThongTin extends Fragment {
         dienvien.setText(dv);
         thoiluong.setText(tl);
         quocgia.setText(qg);
-
         return view;
     }
 }
