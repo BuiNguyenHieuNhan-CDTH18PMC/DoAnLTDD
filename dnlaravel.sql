@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th1 07, 2021 lúc 03:40 PM
+-- Thời gian đã tạo: Th1 14, 2021 lúc 04:52 PM
 -- Phiên bản máy phục vụ: 5.7.31
 -- Phiên bản PHP: 7.3.21
 
@@ -112,6 +112,16 @@ CREATE TABLE IF NOT EXISTS `tbl_binhluan` (
   KEY `fk_phim_id` (`phim_id`),
   KEY `fk_user_id` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_binhluan`
+--
+
+INSERT INTO `tbl_binhluan` (`noi_dung_binhluan`, `danh_gia_phim`, `phim_id`, `user_id`) VALUES
+('hay', 5, 3, 1),
+('Rat hay', 9, 8, 8),
+('te', 5, 8, 8),
+('hay qua ta', 6, 8, 5);
 
 -- --------------------------------------------------------
 
@@ -301,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `tbl_suat_chieu` (
 
 DROP TABLE IF EXISTS `tbl_user_manager`;
 CREATE TABLE IF NOT EXISTS `tbl_user_manager` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `ho_ten` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gioi_tinh` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ngay_sinh` date DEFAULT NULL,
@@ -311,14 +321,14 @@ CREATE TABLE IF NOT EXISTS `tbl_user_manager` (
   `mat_khau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id_user`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_user_manager`
 --
 
-INSERT INTO `tbl_user_manager` (`id`, `ho_ten`, `gioi_tinh`, `ngay_sinh`, `sdt`, `dia_chi`, `tai_khoan`, `mat_khau`, `created_at`, `updated_at`) VALUES
+INSERT INTO `tbl_user_manager` (`id_user`, `ho_ten`, `gioi_tinh`, `ngay_sinh`, `sdt`, `dia_chi`, `tai_khoan`, `mat_khau`, `created_at`, `updated_at`) VALUES
 (1, 'Bùi Nguyên Hiếu Nhân', 'Nam', '2000-05-26', '0779983031', NULL, 'hieunhan', '43ef63b23b5ddbd8dc0b2805da15aca0', NULL, NULL),
 (4, '', '', NULL, '', NULL, 'admin', 'admin', NULL, NULL),
 (5, 'HieuNhan', 'Nam', '2000-05-26', '1234567890', NULL, 'nhan', '1234', NULL, NULL);

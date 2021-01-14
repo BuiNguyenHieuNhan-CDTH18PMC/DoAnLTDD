@@ -16,7 +16,7 @@
 	$connect = new DbConnect();
 	
 	$addBL = "INSERT INTO `tbl_binhluan` (`noi_dung_binhluan`,`danh_gia_phim`,`phim_id`,`user_id`) VALUES ('$nd','$dg','$phim','$tk')";
-	$query = mysqli_query($connect->getDb(),$themTK);
+	$query = mysqli_query($connect->getDb(),$addBL);
     if($query)
     {
         echo"them thanh cong";

@@ -1,6 +1,7 @@
 package com.example.demo11_11.DangNhap;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import com.android.volley.toolbox.Authenticator;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.demo11_11.ChiTietPhim.form_Chi_Tiet_Phim;
 import com.example.demo11_11.GridView.Main_Ds_Phim;
 import com.example.demo11_11.MainActivity;
 import com.example.demo11_11.R;
@@ -38,23 +40,26 @@ import java.util.Map;
 public class Form_Dang_Nhap extends AppCompatActivity {
     EditText tk, mk;
     Button btn;
-    ArrayList<User> ds;
-    //đường dẫn ipv4 điều đến thư mục chứ file php trong thư mục www của wamp
-    //<-- manifests thêm <uses-permission android:name="android.permission.INTERNET"/>
-    //tạo thêm thư mục xml trong res tạo xml networksecurityconfig
     public static String EXTRA_IDUSER = "id_user";
     public static String EXTRA_NAME = "ho_ten";
     public static String EXTRA_USERNAME = "tai_khoan";
+
+    SharedPreferences mPreferences;
+    String sharedprofFile="com.kt_dn.login";
+    SharedPreferences.Editor preferencesEditor;
+
     private String url = "http://192.168.1.106/api_doan/KT_dn.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form__dang__nhap);
-        ds = new ArrayList<>();
         //lấy EditText
         tk = findViewById(R.id.edit_formDN_tk);
         mk = findViewById(R.id.edit_formDN_mk);
         btn = findViewById(R.id.bth_DN);
+        mPreferences=getSharedPreferences(sharedprofFile,MODE_PRIVATE);
+        preferencesEditor = mPreferences.edit();
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,11 +90,12 @@ public class Form_Dang_Nhap extends AppCompatActivity {
                     String hoten = jsonObject.getString("ho_ten");
                     String taikhoan = jsonObject.getString("tai_khoan");
                     if(success.equals("1")){
-                        Intent intent1 = new Intent(Form_Dang_Nhap.this,MainActivity.class);
-                        intent1.putExtra(EXTRA_IDUSER,iduser);
-                        intent1.putExtra(EXTRA_NAME,hoten);
-                        intent1.putExtra(EXTRA_USERNAME,taikhoan);
-                        startActivity(intent1);
+                        preferencesEditor.putString(EXTRA_IDUSER,iduser);
+                        preferencesEditor.putString(EXTRA_NAME,hoten);
+                        preferencesEditor.putString(EXTRA_USERNAME,taikhoan);
+                        preferencesEditor.apply();
+                        Intent intent = new Intent(Form_Dang_Nhap.this,MainActivity.class);
+                        startActivity(intent);
                     }
                     if(success.equals("0")){
                         Toast.makeText(Form_Dang_Nhap.this, message, Toast.LENGTH_SHORT).show();

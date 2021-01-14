@@ -3,6 +3,7 @@ package com.example.demo11_11.GridView;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -56,7 +57,7 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
     public static String EXTRA_NAME = "phim_ten";
     public static String EXTRA_IMAGE = "phim_image";
     public static String EXTRA_CONTENT  = "phim_noi_dung";
-    public static String EXTRA_PREMIERE = "phim_ngay_khoi_chieu";
+    public static String EXTRA_PREMIERE = "phim_ngay_cong_chieu";
     public static String EXTRA_CATEGORY = "ten_the_loai";
     public static String EXTRA_DIRECTORS = "phim_dao_dien";
     public static String EXTRA_CAST = "phim_dien_vien";
@@ -66,12 +67,17 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
     ArrayList<ListMovie> ds;
     RecyclerView recyclerView;
     ImageMovieGridAdapter adapter;
+    SharedPreferences mPreferences;
+    String shareProFile = "com.show_phim.dang_chieu";
+    SharedPreferences.Editor editor;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         //gọi đến fragment grid view tab 1
         View view = inflater.inflate(R.layout.fragment_grid_view_tab1, container, false);
+        mPreferences = this.getActivity().getSharedPreferences(shareProFile,Context.MODE_PRIVATE);
+        editor = mPreferences.edit();
         recyclerView = (RecyclerView) view.findViewById(R.id.list_phim_tab1);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
         ds = new ArrayList<>();
@@ -90,7 +96,6 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 jsonObject = response.getJSONObject(i);
-
                                 String id = jsonObject.getString("id");
                                 String image = jsonObject.getString("phim_image");
                                 String ten = jsonObject.getString("phim_ten");
@@ -123,18 +128,19 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
 
     @Override
     public void onItemClick(int position) {
-        Intent intent = new Intent(getContext(),form_Chi_Tiet_Phim.class);
         ListMovie listMovie = ds.get(position);
-        intent.putExtra(EXTRA_ID,listMovie.getId());
-        intent.putExtra(EXTRA_IMAGE,listMovie.getPhim_image());
-        intent.putExtra(EXTRA_NAME,listMovie.getPhim_ten());
-        intent.putExtra(EXTRA_CONTENT,listMovie.getPhim_noi_dung());
-        intent.putExtra(EXTRA_PREMIERE, listMovie.getPhim_ngay_cong_chieu());
-        intent.putExtra(EXTRA_CATEGORY, listMovie.getTen_the_loai());
-        intent.putExtra(EXTRA_DIRECTORS, listMovie.getPhim_dao_dien());
-        intent.putExtra(EXTRA_CAST, listMovie.getPhim_dien_vien());
-        intent.putExtra(EXTRA_TIME, listMovie.getPhim_thoi_luong_id());
-        intent.putExtra(EXTRA_NATION, listMovie.getPhim_quoc_gia());
+        editor.putString(EXTRA_ID,listMovie.getId());
+        editor.putString(EXTRA_CAST,listMovie.getPhim_dien_vien());
+        editor.putString(EXTRA_CATEGORY,listMovie.getTen_the_loai());
+        editor.putString(EXTRA_CONTENT,listMovie.getPhim_noi_dung());
+        editor.putString(EXTRA_DIRECTORS,listMovie.getPhim_dao_dien());
+        editor.putString(EXTRA_IMAGE,listMovie.getPhim_image());
+        editor.putString(EXTRA_NAME,listMovie.getPhim_ten());
+        editor.putString(EXTRA_NATION,listMovie.getPhim_quoc_gia());
+        editor.putString(EXTRA_PREMIERE,listMovie.getPhim_ngay_cong_chieu());
+        editor.putString(EXTRA_TIME,listMovie.getPhim_thoi_luong_id());
+        editor.apply();
+        Intent intent = new Intent(getContext(),form_Chi_Tiet_Phim.class);
         startActivity(intent);
     }
 }

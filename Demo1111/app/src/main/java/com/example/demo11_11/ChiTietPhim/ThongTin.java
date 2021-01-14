@@ -1,6 +1,8 @@
 package com.example.demo11_11.ChiTietPhim;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.toolbox.StringRequest;
 import com.example.demo11_11.GridView.GridViewTab1;
 import com.example.demo11_11.GridView.GridViewTab2;
 import com.example.demo11_11.R;
@@ -33,6 +36,8 @@ import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_TIME;
 
 
 public class ThongTin extends Fragment {
+    SharedPreferences mPreferences;
+    String shareProFile = "com.show_phim.dang_chieu";
     TextView ten, nd;
     EditText khoichieu, theloai, daodien, dienvien, thoiluong, quocgia;
     Intent intent = new Intent();
@@ -41,16 +46,17 @@ public class ThongTin extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_thong_tin, container, false);
-        intent = getActivity().getIntent();
-        String image = intent.getStringExtra(EXTRA_IMAGE);
-        String tenphim = intent.getStringExtra(EXTRA_NAME);
-        String noidung = intent.getStringExtra(EXTRA_CONTENT);
-        String ngaychieu = intent.getStringExtra(EXTRA_PREMIERE);
-        String theLoai = intent.getStringExtra(EXTRA_CATEGORY);
-        String dd = intent.getStringExtra(EXTRA_DIRECTORS);
-        String dv = intent.getStringExtra(EXTRA_CAST);
-        String tl = intent.getStringExtra(EXTRA_TIME);
-        String qg = intent.getStringExtra(EXTRA_NATION);
+        mPreferences = getActivity().getSharedPreferences(shareProFile, Context.MODE_PRIVATE);
+
+        String image = mPreferences.getString(EXTRA_IMAGE,"null");
+        String tenphim = mPreferences.getString(EXTRA_NAME,"null");
+        String noidung = mPreferences.getString(EXTRA_CONTENT,"null");
+        String ngaychieu = mPreferences.getString(EXTRA_PREMIERE,"null");
+        String theLoai = mPreferences.getString(EXTRA_CATEGORY,"null");
+        String dd = mPreferences.getString(EXTRA_DIRECTORS,"null");
+        String dv = mPreferences.getString(EXTRA_CAST,"null");
+        String tl = mPreferences.getString(EXTRA_TIME,"null");
+        String qg = mPreferences.getString(EXTRA_NATION,"null");
 
         ImageView imageView = view.findViewById(R.id.image_formThongTin_anh);
         ten = view.findViewById(R.id.tv_formThongTin_TenPhim);

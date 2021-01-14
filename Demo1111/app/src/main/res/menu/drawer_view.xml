@@ -16,5 +16,8 @@
         <item
             android:title="Danh sách phim"
             android:id="@+id/drawer_dsphim" />
+        <item
+            android:title="Đăng xuất"
+            android:id="@+id/drawer_dangxuat" />
     </group>
 </menu>

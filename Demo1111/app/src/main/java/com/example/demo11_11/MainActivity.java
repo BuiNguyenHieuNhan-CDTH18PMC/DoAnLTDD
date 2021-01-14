@@ -1,6 +1,7 @@
 package com.example.demo11_11;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -28,11 +29,13 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private Intent intent;
+    String shareProFile ="com.kt_dn.login";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         tabLayout = (TabLayout)findViewById(R.id.tabLayout);
         viewPager = (ViewPager)findViewById(R.id.viewPager);
         adapter = new TabAdapter(getSupportFragmentManager());
@@ -47,23 +50,30 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.drawer_dangnhap: {
-                        intent = new Intent(MainActivity.this, Form_Dang_Nhap.class);
+                        startActivity(new Intent(MainActivity.this, Form_Dang_Nhap.class));
                         break;
                     }
                     case R.id.drawer_dangky: {
-                        intent = new Intent(MainActivity.this, form_Dang_Ki.class);
+                        startActivity(new Intent(MainActivity.this, form_Dang_Ki.class));
                         break;
                     }
                     case R.id.drawer_dsphim: {
-                        intent = new Intent(MainActivity.this, Main_Ds_Phim.class);
+                        startActivity(new Intent(MainActivity.this, Main_Ds_Phim.class));
                         break;
                     }
                     case R.id.drawer_thongtin:{
-                        intent = new Intent(MainActivity.this, form_Info_User.class);
+                        startActivity(new Intent(MainActivity.this, form_Info_User.class));
+                        break;
+                    }
+                    case R.id.drawer_dangxuat:{
+                        SharedPreferences sharedPreferences = getSharedPreferences(shareProFile,MODE_PRIVATE);
+                        SharedPreferences.Editor editor =  sharedPreferences.edit();
+                        editor.clear();
+                        editor.apply();
+                        finish();
                         break;
                     }
                 }
-                startActivity(intent);
                 drawerLayout.closeDrawers();
                 return true;
             }
