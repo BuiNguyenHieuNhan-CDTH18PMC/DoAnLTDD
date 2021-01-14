@@ -17,13 +17,7 @@
         android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        android:layout_marginTop="20dp"/>
     <EditText
         android:id="@+id/editTextHoTen"
         android:layout_width="wrap_content"
@@ -35,12 +29,8 @@
         android:textSize="24sp"
         android:layout_below="@id/txtHoten"
         android:layout_marginLeft="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.315"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115" />
+        android:textColor="@color/black"
+        android:enabled="false"/>
 
     <ImageButton
         android:id="@+id/imagexoa"
@@ -59,13 +49,7 @@
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:layout_below="@id/editTextHoTen"
-        android:layout_marginLeft="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
+        android:layout_marginLeft="25dp"/>
     <EditText
         android:id="@+id/editTextSDT"
         android:layout_width="wrap_content"
@@ -76,44 +60,30 @@
         android:layout_marginTop="10dp"
         android:layout_below="@id/txtSDT"
         android:layout_marginLeft="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.315"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        android:textColor="@color/black"
+        android:enabled="false"/>
     <TextView
-        android:id="@+id/txtEmail"
+        android:id="@+id/tv_GioiTinh"
         android:layout_width="103dp"
         android:layout_height="31dp"
-        android:text="Email"
+        android:text="Giới tính"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"
         android:layout_below="@id/editTextSDT"
-        android:layout_marginLeft="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307" />
+        android:layout_marginLeft="25dp" />
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/editTextGioiTinh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:layout_below="@id/txtEmail"
+        android:layout_below="@id/tv_GioiTinh"
         android:layout_marginLeft="25dp"
         android:textSize="24sp"
         android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.315"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.362" />
+        android:textColor="@color/black"
+        android:enabled="false"/>
     <TextView
         android:id="@+id/txtngay"
         android:layout_width="161dp"
@@ -121,15 +91,9 @@
         android:text="Ngày sinh"
         android:textSize="24sp"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/editTextEmail"
+        android:layout_below="@id/editTextGioiTinh"
         android:layout_marginLeft="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.425" />
+        android:textStyle="bold"/>
     <EditText
         android:id="@+id/ngay"
         android:layout_width="wrap_content"
@@ -140,10 +104,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="16/06/2000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/black"
+        android:enabled="false"/>
 
 
     <ImageButton
@@ -154,12 +116,7 @@
         android:layout_marginLeft="9dp"
         android:layout_marginBottom="3dp"
         android:layout_toRightOf="@id/ngay"
-        android:onClick="chonngay"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ngay"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        android:onClick="chonngay"/>
 
     <TextView
         android:id="@+id/txtkhuvuc"
@@ -170,13 +127,7 @@
         android:layout_marginLeft="25dp"
         android:layout_below="@id/ngay"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.534" />
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/editTextkhuvuc"
@@ -189,12 +140,8 @@
         android:layout_marginLeft="25dp"
         android:textSize="24sp"
         android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.315"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
+        android:textColor="@color/black"
+        android:enabled="false" />
 
     <ImageButton
         android:id="@+id/imagekhuvuc"
@@ -212,13 +159,7 @@
         android:layout_marginTop="10dp"
         android:layout_below="@id/editTextkhuvuc"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654" />
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/editTextrap"
@@ -230,13 +171,9 @@
         android:textSize="24sp"
         android:layout_marginLeft="25dp"
         android:layout_below="@id/txtrap"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.315"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721" />
+        android:textColor="@color/black"
+        android:enabled="false"/>
     <ImageButton
         android:id="@+id/imagerap"
         android:layout_width="67dp"
@@ -255,13 +192,7 @@
         android:layout_below="@id/editTextrap"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="25dp"
-        android:onClick="sua"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextrap"
-        app:layout_constraintVertical_bias="0.401" />
+        android:onClick="sua"/>
 
     </RelativeLayout>
 </ScrollView>

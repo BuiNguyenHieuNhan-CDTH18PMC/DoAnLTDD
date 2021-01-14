@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.demo11_11.DangNhap.Form_Dang_Nhap;
 import com.example.demo11_11.DangNhap.form_Dang_Ki;
@@ -22,7 +23,10 @@ import com.example.demo11_11.InfoUser.form_Info_User;
 
 import java.util.ArrayList;
 
+import static com.example.demo11_11.DangNhap.Form_Dang_Nhap.EXTRA_USERNAME;
+
 public class MainActivity extends AppCompatActivity {
+    
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private TabAdapter adapter;
@@ -30,11 +34,17 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
     private Intent intent;
     String shareProFile ="com.kt_dn.login";
-
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    String taikhoan;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sharedPreferences = getSharedPreferences(shareProFile,MODE_PRIVATE);
+        taikhoan = sharedPreferences.getString(EXTRA_USERNAME,null);
 
         tabLayout = (TabLayout)findViewById(R.id.tabLayout);
         viewPager = (ViewPager)findViewById(R.id.viewPager);
@@ -66,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case R.id.drawer_dangxuat:{
-                        SharedPreferences sharedPreferences = getSharedPreferences(shareProFile,MODE_PRIVATE);
-                        SharedPreferences.Editor editor =  sharedPreferences.edit();
+                        sharedPreferences = getSharedPreferences(shareProFile,MODE_PRIVATE);
+                        editor =  sharedPreferences.edit();
                         editor.clear();
                         editor.apply();
-                        finish();
+                        startActivity(new Intent(MainActivity.this, MainActivity.class));
                         break;
                     }
                 }

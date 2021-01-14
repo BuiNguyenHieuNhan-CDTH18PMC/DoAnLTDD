@@ -40,7 +40,6 @@ public class ThongTin extends Fragment {
     String shareProFile = "com.show_phim.dang_chieu";
     TextView ten, nd;
     EditText khoichieu, theloai, daodien, dienvien, thoiluong, quocgia;
-    Intent intent = new Intent();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

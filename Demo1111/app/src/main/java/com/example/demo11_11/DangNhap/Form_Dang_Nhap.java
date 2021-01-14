@@ -38,12 +38,16 @@ import java.util.LinkedList;
 import java.util.Map;
 
 public class Form_Dang_Nhap extends AppCompatActivity {
-    EditText tk, mk;
-    Button btn;
+
     public static String EXTRA_IDUSER = "id_user";
     public static String EXTRA_NAME = "ho_ten";
     public static String EXTRA_USERNAME = "tai_khoan";
+    public static String EXTRA_GIOITINH = "gioi_tinh";
+    public static String EXTRA_SDT = "sdt";
+    public static String EXTRA_NGAY = "ngay_sinh";
 
+    EditText tk, mk;
+    Button btn;
     SharedPreferences mPreferences;
     String sharedprofFile="com.kt_dn.login";
     SharedPreferences.Editor preferencesEditor;
@@ -89,10 +93,16 @@ public class Form_Dang_Nhap extends AppCompatActivity {
                     String iduser = jsonObject.getString("id_user");
                     String hoten = jsonObject.getString("ho_ten");
                     String taikhoan = jsonObject.getString("tai_khoan");
+                    String gioitinh = jsonObject.getString("gioi_tinh");
+                    String ngay = jsonObject.getString("ngay_sinh");
+                    String sdt = jsonObject.getString("sdt");
                     if(success.equals("1")){
                         preferencesEditor.putString(EXTRA_IDUSER,iduser);
                         preferencesEditor.putString(EXTRA_NAME,hoten);
                         preferencesEditor.putString(EXTRA_USERNAME,taikhoan);
+                        preferencesEditor.putString(EXTRA_GIOITINH,gioitinh);
+                        preferencesEditor.putString(EXTRA_NGAY,ngay);
+                        preferencesEditor.putString(EXTRA_SDT,sdt);
                         preferencesEditor.apply();
                         Intent intent = new Intent(Form_Dang_Nhap.this,MainActivity.class);
                         startActivity(intent);
