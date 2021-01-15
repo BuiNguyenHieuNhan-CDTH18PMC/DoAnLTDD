@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputImage">Hình ảnh:</label>
-                                    <input type="file" name="hinh_anh_phim" class="form-control" id="exampleInputEmail1">
+                                    <input type="text" name="hinh_anh_phim" class="form-control" id="exampleInputEmail1">
                                 </div>                        
                                 <button type="submit" class="btn btn-info">THÊM<Main></Main></button>
                                 </form>

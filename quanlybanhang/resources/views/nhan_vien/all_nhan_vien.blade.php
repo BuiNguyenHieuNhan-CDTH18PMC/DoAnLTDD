@@ -37,7 +37,11 @@
           <tr>
             <td><label class="i-checks m-b-none"><input type="checkbox"><i></i></label></td>
             <td>{{$pro->staff_ho_ten}}</td>
-            <td><image src='public/Images/staff/{{$pro->staff_image}}'width ="100px" height="150px"></td>
+            @if($pro->staff_image != null)
+            <td><image src='{{$pro->staff_image}}'width ="100px" height="150px"></td>
+            @else
+            <td><image src=''></td>
+            @endif
             <td>{{$pro->staff_gioi_tinh}}</td>
             <td>{{$pro->staff_ngay_sinh}}</td>
             <td>{{$pro->staff_sdt}}</td>

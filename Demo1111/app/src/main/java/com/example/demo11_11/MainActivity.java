@@ -72,12 +72,17 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case R.id.drawer_thongtin:{
-                        startActivity(new Intent(MainActivity.this, form_Info_User.class));
+                        if(taikhoan!=null) {
+                            startActivity(new Intent(MainActivity.this, form_Info_User.class));
+                        }
+                        else{
+                            Toast.makeText(MainActivity.this, "Bạn chưa đăng nhập, vui lòng đăng nhập", Toast.LENGTH_SHORT).show();
+                        }
                         break;
                     }
                     case R.id.drawer_dangxuat:{
                         sharedPreferences = getSharedPreferences(shareProFile,MODE_PRIVATE);
-                        editor =  sharedPreferences.edit();
+                        editor = sharedPreferences.edit();
                         editor.clear();
                         editor.apply();
                         startActivity(new Intent(MainActivity.this, MainActivity.class));

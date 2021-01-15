@@ -86,7 +86,7 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
     }
 
     public void json(){
-        String url = "http://192.168.1.106/api_doan/show_movie_dang_chieu";
+        String url = "http://192.168.1.103/api_doan/show_movie_dang_chieu";
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {

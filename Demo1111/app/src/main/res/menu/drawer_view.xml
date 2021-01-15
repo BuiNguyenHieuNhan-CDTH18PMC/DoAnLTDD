@@ -4,7 +4,7 @@
         <item
             android:title="Thông tin"
             android:id="@+id/drawer_thongtin"
-            />
+            android:icon="@android:drawable/ic_menu_info_details" />
         <item
             android:id="@+id/drawer_dangnhap"
             android:icon="@android:drawable/ic_menu_myplaces"
@@ -15,9 +15,11 @@
             android:title="Đăng kí"/>
         <item
             android:title="Danh sách phim"
-            android:id="@+id/drawer_dsphim" />
+            android:id="@+id/drawer_dsphim"
+            android:icon="@android:drawable/ic_menu_sort_by_size"/>
         <item
             android:title="Đăng xuất"
-            android:id="@+id/drawer_dangxuat" />
+            android:id="@+id/drawer_dangxuat"
+            android:icon="@android:drawable/ic_menu_set_as"/>
     </group>
 </menu>

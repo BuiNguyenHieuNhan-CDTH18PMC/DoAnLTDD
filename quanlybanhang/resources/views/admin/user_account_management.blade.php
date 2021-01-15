@@ -3,7 +3,7 @@
 <div class="table-agile-info">
  <div class="panel panel-default">
     <div class="panel-heading">
-     Quản lý tài khoản
+     Quản lý tài khoản khách hàng
     </div>
     <div>
       <table class="table" ui-jq="footable" ui-options='{
@@ -23,7 +23,6 @@
             <th>Giới tính</th>           
             <th data-breakpoints="xs sm md" data-title="DOB">Ngày sinh</th>
             <th>Số điện thoại</th>
-            <th>Địa chỉ</th>
             <th>Tài khoản</th>
             <th>Mật khẩu</th>
           </tr>
@@ -31,12 +30,11 @@
         <tbody>
             @foreach($show_user_management as $key => $cate_pro)
           <tr data-expanded="true">             
-            <td>{{$cate_pro->id}}</td>
+            <td>{{$cate_pro->id_user}}</td>
             <td>{{$cate_pro->ho_ten}}</td>
             <td>{{$cate_pro->gioi_tinh}}</td>
             <td>{{$cate_pro->ngay_sinh}}</td>
             <td>{{$cate_pro->sdt}}</td>   
-            <td>{{$cate_pro->dia_chi}}</td>
             <td>{{$cate_pro->tai_khoan}}</td>
             <td>{{$cate_pro->mat_khau}}</td>
             <td>            

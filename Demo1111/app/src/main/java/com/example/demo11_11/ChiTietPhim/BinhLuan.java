@@ -80,7 +80,7 @@ public class BinhLuan extends Fragment {
     }
 
     public void addBinhLuan(){
-        String url = "http://192.168.1.106/api_doan/binh_luan";
+        String url = "http://192.168.1.103/api_doan/binh_luan";
         RequestQueue request = Volley.newRequestQueue(getContext());
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -109,7 +109,7 @@ public class BinhLuan extends Fragment {
     }
 
     public void showBinhLuan(){
-        String url ="http://192.168.1.106/api_doan/show_binh_luan";
+        String url ="http://192.168.1.103/api_doan/show_binh_luan";
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override

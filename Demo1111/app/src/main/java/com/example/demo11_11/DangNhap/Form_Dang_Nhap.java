@@ -52,7 +52,7 @@ public class Form_Dang_Nhap extends AppCompatActivity {
     String sharedprofFile="com.kt_dn.login";
     SharedPreferences.Editor preferencesEditor;
 
-    private String url = "http://192.168.1.106/api_doan/KT_dn.php";
+    private String url = "http://192.168.1.103/api_doan/KT_dn.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputImage">Hình ảnh:</label>
-                                    <input type="file" name="hinh_anh_staff" class="form-control" id="exampleInputEmail1">
+                                    <input type="text" name="hinh_anh_staff" class="form-control" id="exampleInputEmail1">
                                 </div>  
                                 <div class="form-group">
                                     <label for="exampleInputTheloai">Giới tính:</label>
@@ -40,10 +40,6 @@
                                 <div class="form-group">
                                     <label for="exampleInputDienVien">Số điện thoại:</label>
                                     <input type="text" name="sdt_staff" class="form-control" id="exampleInputEmail1" placeholder="Nhập số điện thoại" >
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputThoiGian">Địa chỉ:</label>
-                                    <input type="text" name="dia_chi_staff" class="form-control" id="exampleInputEmail1" placeholder="Nhập địa chỉ" >
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputThoiGian">Tài khoản:</label>

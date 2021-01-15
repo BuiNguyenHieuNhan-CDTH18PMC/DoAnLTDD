@@ -42,7 +42,7 @@
             <td>{{$pro->phim_dao_dien}}</td>
             <td>{{$pro->phim_dien_vien}}</td>
             <td>{{$pro->phim_quoc_gia}}</td>
-            <td><image src='public/Images/movie/{{$pro->phim_image}}' width="100px" height="150px"></td>
+            <td><image src='{{$pro->phim_image}}' width="100px" height="150px"></td>
             <td>{{$pro->phim_ngay_cong_chieu}}</td>
             <td>{{$pro->phim_thoi_luong_id}}</td>
             <td>           
@@ -58,23 +58,5 @@
         </tbody>
       </table>
     </div>
-    <footer class="panel-footer">
-      <div class="row">
-        
-        <div class="col-sm-5 text-center">
-          <small class="text-muted inline m-t-sm m-b-sm">Hiển thị 10 - 20 item</small>
-        </div>
-        <div class="col-sm-7 text-right text-center-xs">                
-          <ul class="pagination pagination-sm m-t-none m-b-none">
-            <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
   </div>
 @endsection
