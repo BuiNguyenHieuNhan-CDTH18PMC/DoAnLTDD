@@ -3,6 +3,7 @@ package com.example.demo11_11.ChiTietPhim;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.android.volley.toolbox.StringRequest;
 import com.example.demo11_11.GridView.GridViewTab1;
@@ -33,12 +35,14 @@ import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_NAME;
 import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_NATION;
 import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_PREMIERE;
 import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_TIME;
+import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_VIDEO;
 
 
 public class ThongTin extends Fragment {
     SharedPreferences mPreferences, mPreferences1;
     String shareProFile = "com.show_phim.dang_chieu";
     String shareProFile1 = "com.show_phim.sap_chieu";
+    VideoView videoView;
     TextView ten, nd;
     EditText khoichieu, theloai, daodien, dienvien, thoiluong, quocgia;
     @Override
@@ -49,7 +53,6 @@ public class ThongTin extends Fragment {
         mPreferences = getActivity().getSharedPreferences(shareProFile, Context.MODE_PRIVATE);
         mPreferences1 = getActivity().getSharedPreferences(shareProFile1, Context.MODE_PRIVATE);
 
-        String image = mPreferences.getString(EXTRA_IMAGE,"null");
         String tenphim = mPreferences.getString(EXTRA_NAME,"null");
         String noidung = mPreferences.getString(EXTRA_CONTENT,"null");
         String ngaychieu = mPreferences.getString(EXTRA_PREMIERE,"null");
@@ -58,8 +61,8 @@ public class ThongTin extends Fragment {
         String dv = mPreferences.getString(EXTRA_CAST,"null");
         String tl = mPreferences.getString(EXTRA_TIME,"null");
         String qg = mPreferences.getString(EXTRA_NATION,"null");
+        String vd = mPreferences.getString(EXTRA_VIDEO,"null");
 
-        ImageView imageView = view.findViewById(R.id.image_formThongTin_anh);
         ten = view.findViewById(R.id.tv_formThongTin_TenPhim);
         nd = view.findViewById(R.id.tv_formThongTin_NoiDung);
         khoichieu = view.findViewById(R.id.edit_formThongTin_KhoiChieu);
@@ -68,8 +71,11 @@ public class ThongTin extends Fragment {
         dienvien = view.findViewById(R.id.edit_formThongTin_DienVien);
         thoiluong = view.findViewById(R.id.edit_formThongTin_ThoiLuong);
         quocgia = view.findViewById(R.id.edit_formThongTin_QuocGia);
+        videoView = view.findViewById(R.id.video);
+        Uri uri = Uri.parse(vd);
+        videoView.setVideoURI(uri);
 
-        Picasso.with(getContext()).load(image).into(imageView);
+
         ten.setText(tenphim);
         nd.setText(noidung);
         khoichieu.setText(ngaychieu);
@@ -78,6 +84,7 @@ public class ThongTin extends Fragment {
         dienvien.setText(dv);
         thoiluong.setText(tl);
         quocgia.setText(qg);
+        videoView.start();
         return view;
     }
 }

@@ -11,8 +11,9 @@ public class ListMovie {
     private String phim_dao_dien;
     private String phim_dien_vien;
     private String phim_quoc_gia;
+    private String video;
 
-    public ListMovie(String id,String image, String ten, String tl, String thoiluong, String ngay, String nd, String dd, String dv, String qg){
+    public ListMovie(String id,String image, String ten, String tl, String thoiluong, String ngay, String nd, String dd, String dv, String qg, String video){
         this.id = id;
         this.phim_image = image;
         this.phim_ten = ten;
@@ -23,6 +24,7 @@ public class ListMovie {
         this.phim_dao_dien = dd;
         this.phim_dien_vien = dv;
         this.phim_quoc_gia = qg;
+        this.video = video;
     }
 
     public String getPhim_ten() {
@@ -103,6 +105,14 @@ public class ListMovie {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
     }
 }
 
