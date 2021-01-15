@@ -61,9 +61,9 @@ public class tab1 extends Fragment {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                JSONObject jsonObject = null;
-                try {
-                    for (int i = 0; i < response.length(); i++) {
+                try{
+                    JSONObject jsonObject = null;
+                    for(int i = 0; i<response.length(); i++){
                         jsonObject = response.getJSONObject(i);
 
                         String anh = jsonObject.getString("phim_image");
@@ -72,14 +72,14 @@ public class tab1 extends Fragment {
                     }
                     adapter = new RecyclerImageMovie(getContext(),dsAnh);
                     recyclerView.setAdapter(adapter);
-                }catch (JSONException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "Lỗi dữ liệu", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show();
             }
         });
         requestQueue.add(jsonArrayRequest);

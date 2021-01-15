@@ -36,8 +36,9 @@ import static com.example.demo11_11.GridView.GridViewTab1.EXTRA_TIME;
 
 
 public class ThongTin extends Fragment {
-    SharedPreferences mPreferences;
+    SharedPreferences mPreferences, mPreferences1;
     String shareProFile = "com.show_phim.dang_chieu";
+    String shareProFile1 = "com.show_phim.sap_chieu";
     TextView ten, nd;
     EditText khoichieu, theloai, daodien, dienvien, thoiluong, quocgia;
     @Override
@@ -46,6 +47,7 @@ public class ThongTin extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_thong_tin, container, false);
         mPreferences = getActivity().getSharedPreferences(shareProFile, Context.MODE_PRIVATE);
+        mPreferences1 = getActivity().getSharedPreferences(shareProFile1, Context.MODE_PRIVATE);
 
         String image = mPreferences.getString(EXTRA_IMAGE,"null");
         String tenphim = mPreferences.getString(EXTRA_NAME,"null");
