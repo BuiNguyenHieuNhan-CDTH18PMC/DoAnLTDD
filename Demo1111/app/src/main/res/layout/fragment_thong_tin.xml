@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <VideoView
-            android:id="@+id/video"
+        <ImageView
+            android:id="@+id/image_formThongTin_anh"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_alignParentStart="true"
@@ -23,13 +23,14 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/anime" />
 
         <TextView
             android:id="@+id/tv_formThongTin_TenPhim"
             android:layout_width="313dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/video"
+            android:layout_below="@+id/image_formThongTin_anh"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="96dp"
             android:text="TextView"
@@ -40,7 +41,7 @@
             android:id="@+id/btn_formThongTin_DatVe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/video"
+            android:layout_below="@+id/image_formThongTin_anh"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="317dp"

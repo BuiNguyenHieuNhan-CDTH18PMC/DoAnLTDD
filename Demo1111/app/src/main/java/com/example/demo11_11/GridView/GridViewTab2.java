@@ -57,7 +57,7 @@ public class GridViewTab2 extends Fragment implements ImageMovieGridAdapter.OnIt
     public static String EXTRA_CAST = "phim_dien_vien";
     public static String EXTRA_TIME = "phim_thoi_luong_id";
     public static String EXTRA_NATION = "phim_quoc_gia";
-    public static String EXTRA_VIDEO = "video";
+
     ArrayList<ListMovie> ds;
     RecyclerView recyclerView;
     ImageMovieGridAdapter adapter;
@@ -101,8 +101,8 @@ public class GridViewTab2 extends Fragment implements ImageMovieGridAdapter.OnIt
                                 String dd = jsonObject.getString("phim_dao_dien");
                                 String dv = jsonObject.getString("phim_dien_vien");
                                 String qg = jsonObject.getString("phim_quoc_gia");
-                                String vd = jsonObject.getString("video");
-                                ListMovie listMovie = new ListMovie(id,image,ten,theloai,thoiluong,ngaychieu,nd,dd,dv,qg, vd);
+
+                                ListMovie listMovie = new ListMovie(id,image,ten,theloai,thoiluong,ngaychieu,nd,dd,dv,qg);
                                 ds.add(listMovie);
 
                             }
@@ -135,7 +135,6 @@ public class GridViewTab2 extends Fragment implements ImageMovieGridAdapter.OnIt
         editor.putString(EXTRA_NATION,listMovie.getPhim_quoc_gia());
         editor.putString(EXTRA_PREMIERE,listMovie.getPhim_ngay_cong_chieu());
         editor.putString(EXTRA_TIME,listMovie.getPhim_thoi_luong_id());
-        editor.putString(EXTRA_VIDEO,listMovie.getVideo());
         editor.apply();
         Intent intent = new Intent(getContext(),form_Chi_Tiet_Phim.class);
         startActivity(intent);
