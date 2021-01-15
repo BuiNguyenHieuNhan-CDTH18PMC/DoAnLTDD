@@ -30,6 +30,7 @@
             <th>Hình ảnh</th>
             <th>Ngày công chiếu</th>
             <th>Thời lượng</th>
+            <th>Trạng thái</th>
           </tr>
         </thead>
         <tbody>
@@ -45,6 +46,7 @@
             <td><image src='{{$pro->phim_image}}' width="100px" height="150px"></td>
             <td>{{$pro->phim_ngay_cong_chieu}}</td>
             <td>{{$pro->phim_thoi_luong_id}}</td>
+            <td>{{$pro->trang_thai_phim}}</td>
             <td>           
                 <a href="{{URL::to('/edit-phim/'.$pro->id)}}" class="btn btn-warning">
                     <span class="glyphicon glyphicon-edit"></span> Sửa

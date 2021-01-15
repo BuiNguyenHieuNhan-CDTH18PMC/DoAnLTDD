@@ -10,23 +10,34 @@ session_start();
 
 class AdminController extends Controller
 {
+    public function AuthLogin(){
+        $staff_id = Session::get('staff_id');
+        if($staff_id){
+           return Redirect::to('dashboard');
+        }
+        else{
+           return Redirect::to('admin')->send();
+        }
+    }
+
     public function index(){
         return view('admin_login');
     }
 
     public function show_dashboard(){
+        $this->AuthLogin();
         return view('admin.dashboard');
     }
 
     public function dashboard(Request $request){
-        $admin_email = $request->admin_email;
-        $admin_password =md5($request->admin_password);
+        $staff_email = $request->staff_email;
+        $staff_password =md5($request->staff_password);
 
-        $result = DB::table('tbl_nhanvien')->where('staff_tai_khoan',$admin_email)->where('staff_mat_khau',$admin_password)->first();
+        $result = DB::table('tbl_nhanvien')->where('staff_tai_khoan',$staff_email)->where('staff_mat_khau',$staff_password)->first();
         if($result)
         {
-            Session::put('admin_name',$result->staff_tai_khoan);
-            Session::put('admin_id',$result->staff_id);
+            Session::put('staff_name',$result->staff_tai_khoan);
+            Session::put('staff_id',$result->staff_id);
             return Redirect::to('/dashboard');
         }
         else{

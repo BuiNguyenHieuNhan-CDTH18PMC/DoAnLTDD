@@ -25,14 +25,9 @@ class MovieController extends Controller
         $data['phim_quoc_gia']=$request->quoc_gia_phim;
         $data['phim_thoi_luong_id']=$request->thoi_luong_phim;
         $data['the_loai_id']=$request->the_loai_phim;
-        $data['phim_image']=$request->thoi_luong_phim;
-        $get_image = $request->file('hinh_anh_phim');
-        if($get_image){
-            $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.',$get_name_image));
-            $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('public/Images/movie',$new_image);
-            $data['phim_image'] = $new_image;
+        $data['phim_image']=$request->hinh_anh_phim;
+        $data['trang_thai_phim']=$request->trang_thai_phim;
+        if($data['phim_image'] != null){
             DB::table('tbl_phim')->insert($data);
         }else{
             $data['phim_image'] = '';
@@ -43,7 +38,7 @@ class MovieController extends Controller
     }
 
     public function all_movie(){
-        $result = DB::table('tbl_phim')->join('tbltheloai','tbltheloai.id_the_loai','=','tbl_phim.the_loai_id')->get();  
+        $result = DB::table('tbl_phim')->join('tbltheloai','tbltheloai.id_the_loai','=','tbl_phim.the_loai_id')->orderby('id','desc')->get();  
         $manager = view('admin.all_movie')->with('all_movie',$result);
 
         return view('admin_layout')->with('admin.all_movie',$manager);
@@ -66,20 +61,10 @@ class MovieController extends Controller
         $data['phim_dien_vien']=$request->dien_vien_phim;
         $data['phim_quoc_gia']=$request->quoc_gia_phim;
         $data['phim_thoi_luong_id']=$request->thoi_luong_phim;
-        $data['the_loai_id']=$request->the_loai_phim;
-        $get_image = $request->file('hinh_anh_phim');
-        if($get_image){
-            $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.',$get_name_image));
-            $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('public/Images/movie',$new_image);
-            $data['phim_image'] = $new_image;
-            DB::table('tbl_phim')->where('id',$id)->update($data);
-            Session::put('message','Cập nhật thành công');
-        }else{
-            DB::table('tbl_phim')->where('id',$id)->update($data);
-            Session::put('message','Cập nhật thành công');
-        }
+        $data['the_loai_id']=$request->hinh_anh_phim;
+        DB::table('tbl_phim')->where('id',$id)->update($data);
+        Session::put('message','Cập nhật thành công');
+        
         return Redirect::to('all-movie');
     }
 

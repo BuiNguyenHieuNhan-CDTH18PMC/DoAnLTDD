@@ -1,5 +1,5 @@
 <?php
-	require "connect.php";
+	$connect=mysqli_connect("localhost","root","","dnlaravel");
 
 	$tai_khoan=$_POST["tai_khoan"];
 	$mat_khau=$_POST["mat_khau"];
@@ -7,9 +7,8 @@
 	/*$tai_khoan= "nhan";
 	$mat_khau= "1234";*/
 	$list="";
-	$connect = new DbConnect();
  $query= "SELECT * FROM `tbl_user_manager` WHERE `tai_khoan` LIKE '$tai_khoan' AND `mat_khau` LIKE '$mat_khau' ";
- $data = mysqli_query($connect->getDb(),$query);
+ $data = mysqli_query($connect,$query);
 	if(mysqli_num_rows($data)>0)
 	{	
 		while($row=mysqli_fetch_array($data))

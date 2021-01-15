@@ -7,24 +7,12 @@
     tools:context=".MainActivity">
 
 
-    <ImageView
-        android:id="@+id/imageavt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="93dp"
-        app:srcCompat="@drawable/anime" />
-
     <TextView
         android:id="@+id/txtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageavt"
-        android:layout_marginTop="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="174dp"
         android:background="#E91E63"
         android:backgroundTint="#FFFFFF"
         android:gravity="center"
@@ -38,7 +26,7 @@
         android:layout_width="171dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtName"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="206dp"
         android:layout_marginBottom="238dp"
         android:background="#E91E63"
         android:onClick="THONGTIN"
@@ -49,18 +37,19 @@
 
     <Button
         android:id="@+id/btniaodich"
-        android:layout_width="192dp"
-        android:layout_height="39dp"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/txtName"
         android:layout_alignParentRight="true"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginLeft="54dp"
+        android:layout_marginTop="206dp"
+        android:layout_marginRight="-6dp"
         android:layout_toRightOf="@id/btnthongtin"
+        android:background="#E91E63"
         android:onClick="GIAODICH"
         android:text="GIAO DỊCH"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:background="#E91E63"
         tools:ignore="OnClick" />
 
 </RelativeLayout>

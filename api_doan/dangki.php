@@ -1,5 +1,5 @@
 <?php 
-    require "connect.php";
+    $connect=mysqli_connect("localhost","root","","dnlaravel");
 	
 	/*$tai_khoan = "nhanvien1";
 	$mat_khau = "nhan123";
@@ -25,10 +25,8 @@
 	if(isset($_POST["mat_khau"])){
         $mat_khau = $_POST["mat_khau"];
     }
-	$connect = new DbConnect();
-	   
         $CheckTaiKhoan = "SELECT * from tbl_user_manager where tai_khoan like '$tai_khoan'";
-        $checktk = mysqli_query($connect->getDb(), $CheckTaiKhoan);		
+        $checktk = mysqli_query($connect, $CheckTaiKhoan);		
         if(mysqli_num_rows($checktk)>0)
         {
             echo"Tai khoan da ton tai";

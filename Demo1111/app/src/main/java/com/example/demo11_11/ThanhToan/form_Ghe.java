@@ -26,7 +26,7 @@ public class form_Ghe extends AppCompatActivity implements View.OnClickListener{
         btnA5 = findViewById(R.id.btnA5);
         btnA6 = findViewById(R.id.btnA6);
         btnB1= findViewById(R.id.btnB1);
-        btnB1 = findViewById(R.id.btnB2);
+        btnB2 = findViewById(R.id.btnB2);
         btnB3 = findViewById(R.id.btnB3);
         btnB4 = findViewById(R.id.btnB4);
         btnB5 = findViewById(R.id.btnB5);
@@ -38,7 +38,8 @@ public class form_Ghe extends AppCompatActivity implements View.OnClickListener{
         btnC5 = findViewById(R.id.btnC5);
         btnC6 = findViewById(R.id.btnC6);
         btnD1 = findViewById(R.id.btnD1);
-        btnD2 = findViewById(R.id.btnD3);
+        btnD2 = findViewById(R.id.btnD2);
+        btnD3 = findViewById(R.id.btnD3);
         btnD4 = findViewById(R.id.btnD4);
         btnD5 = findViewById(R.id.btnD5);
         btnD6 = findViewById(R.id.btnD6);

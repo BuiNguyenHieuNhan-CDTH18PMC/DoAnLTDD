@@ -2,7 +2,6 @@ package com.example.demo11_11.ChiTietPhim;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,11 +10,10 @@ import android.widget.Button;
 import android.widget.RatingBar;
 
 import com.example.demo11_11.R;
-import com.example.demo11_11.ThanhToan.ThanhToan;
+import com.example.demo11_11.ThanhToan.form_Ghe;
 
 public class form_Chi_Tiet_Phim extends AppCompatActivity {
-    RatingBar ratingBar;
-    Button btnDanhGia;
+    Button btnDatVe;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private ViewPagerAdapter adapter;
@@ -36,7 +34,8 @@ public class form_Chi_Tiet_Phim extends AppCompatActivity {
         mTabLayout.setupWithViewPager(mViewPager);
     }
 
-    public void Buy(View view) {
-        startActivity(new Intent(form_Chi_Tiet_Phim.this, ThanhToan.class));
+    public void Buy(View view){
+        Intent intent = new Intent(form_Chi_Tiet_Phim.this,form_Ghe.class);
+        startActivity(intent);
     }
 }

@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+
 import com.example.demo11_11.R;
 import com.example.demo11_11.TabAdapter;
 
@@ -26,10 +28,5 @@ public class Main_Ds_Phim extends AppCompatActivity {
         adapter.addFragment(new GridViewTab2(),"Sắp chiếu");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_search,menu);
-        return super.onCreateOptionsMenu(menu);
     }
 }

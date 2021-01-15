@@ -10,5 +10,7 @@
         android:id="@+id/list_phim_tab1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_list_phim"/>
+        tools:listitem="@layout/item_list_phim"
+        android:layout_below="@id/EditTim"/>
+
 </FrameLayout>

@@ -56,7 +56,14 @@
                                 <div class="form-group">
                                     <label for="exampleInputImage">Hình ảnh:</label>
                                     <input type="text" name="hinh_anh_phim" class="form-control" id="exampleInputEmail1">
-                                </div>                        
+                                </div>                
+                                <div class="form-group">
+                                    <label for="exampleInputTheloai">Trạng thái:</label>
+                                    <select class="form-control" name="trang_thai_phim">                                   
+                                        <option value ="0">Sắp chiếu</option>
+                                        <option value ="1">Đang chiếu</option>
+                                    </select>
+                                </div>       
                                 <button type="submit" class="btn btn-info">THÊM<Main></Main></button>
                                 </form>
                             </div>
