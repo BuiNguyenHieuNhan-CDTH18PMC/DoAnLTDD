@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Demo1111">
-        <activity android:name=".InfoUser.form_Thong_Tin"></activity>
+        <activity android:name=".ThanhToan.form_Ghe"></activity>
+        <activity android:name=".InfoUser.form_Thong_Tin" />
         <activity android:name=".InfoUser.form_Giao_dich" />
         <activity android:name=".InfoUser.form_Info_User" />
         <activity android:name=".ChiTietPhim.form_Chi_Tiet_Phim" />
