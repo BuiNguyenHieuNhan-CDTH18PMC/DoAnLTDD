@@ -44,7 +44,7 @@ public class RecyclerImageMovie extends RecyclerView.Adapter<RecyclerImageMovie.
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            anh = itemView.findViewById(R.id.imageView);
+            anh = itemView.findViewById(R.id.background);
         }
     }
 }

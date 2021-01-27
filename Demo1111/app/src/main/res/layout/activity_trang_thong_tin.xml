@@ -6,13 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="289dp"
+        android:src="@drawable/logo_cgv" />
 
     <TextView
         android:id="@+id/txtName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="174dp"
+        android:layout_marginTop="361dp"
         android:background="#E91E63"
         android:backgroundTint="#FFFFFF"
         android:gravity="center"
@@ -26,7 +30,7 @@
         android:layout_width="171dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtName"
-        android:layout_marginTop="206dp"
+        android:layout_marginTop="119dp"
         android:layout_marginBottom="238dp"
         android:background="#E91E63"
         android:onClick="THONGTIN"
@@ -41,9 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtName"
         android:layout_alignParentRight="true"
-        android:layout_marginLeft="54dp"
-        android:layout_marginTop="206dp"
-        android:layout_marginRight="-6dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="121dp"
+        android:layout_marginRight="1dp"
         android:layout_toRightOf="@id/btnthongtin"
         android:background="#E91E63"
         android:onClick="GIAODICH"

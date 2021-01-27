@@ -68,7 +68,7 @@ public class BinhLuan extends Fragment {
         btnNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(tk!=null) {
+                if(tk!="null") {
                     addBinhLuan();
                 }
                 else {
@@ -86,7 +86,7 @@ public class BinhLuan extends Fragment {
             @Override
             public void onResponse(String response) {
                 if(response.equals("them thanh cong")){
-                    Intent intent = new Intent(getContext(),ThongTin.class);
+                    Intent intent = new Intent(getContext(),BinhLuan.class);
                     startActivity(intent);
                 }
             }

@@ -26,7 +26,6 @@ import com.example.demo11_11.ChiTietPhim.form_Chi_Tiet_Phim;
 import com.example.demo11_11.GridView.Main_Ds_Phim;
 import com.example.demo11_11.MainActivity;
 import com.example.demo11_11.R;
-import com.squareup.moshi.Json;
 
 import org.json.JSONArray;
 import org.json.JSONException;

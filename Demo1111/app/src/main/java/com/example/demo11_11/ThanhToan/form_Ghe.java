@@ -89,122 +89,152 @@ public class form_Ghe extends AppCompatActivity implements View.OnClickListener{
             case R.id.btnA1:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnA2:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnA3:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnA4:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnA5:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnA6:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnB1:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnB2:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnB3:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnB4:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnB5:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnB6:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnC1:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnC2:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnC3:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnC4:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnC5:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnC6:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnD1:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnD2:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnD3:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnD4:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnD5:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnD6:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnE1:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnE2:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnE3:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnE4:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnE5:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
             case R.id.btnE6:{
                 Intent intent = new Intent(this,ThanhToan .class);
                 startActivity(intent);
+                break;
             }
         }
     }

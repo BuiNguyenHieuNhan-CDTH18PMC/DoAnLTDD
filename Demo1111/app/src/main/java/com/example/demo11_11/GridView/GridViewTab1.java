@@ -37,9 +37,6 @@ import com.example.demo11_11.ChiTietPhim.form_Chi_Tiet_Phim;
 import com.example.demo11_11.DangNhap.Form_Dang_Nhap;
 import com.example.demo11_11.MainActivity;
 import com.example.demo11_11.R;
-import com.squareup.moshi.JsonAdapter;
-import com.squareup.moshi.Moshi;
-import com.squareup.moshi.Types;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -53,9 +50,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
 
 import static android.widget.Toast.LENGTH_LONG;
 

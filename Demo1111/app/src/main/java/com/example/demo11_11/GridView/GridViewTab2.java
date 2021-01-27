@@ -24,10 +24,6 @@ import com.android.volley.toolbox.Volley;
 import com.example.demo11_11.ChiTietPhim.form_Chi_Tiet_Phim;
 import com.example.demo11_11.ImageMovie;
 import com.example.demo11_11.R;
-import com.example.demo11_11.RecyclerImageMovie;
-import com.squareup.moshi.JsonAdapter;
-import com.squareup.moshi.Moshi;
-import com.squareup.moshi.Types;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,9 +35,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
 
 import static android.widget.Toast.LENGTH_LONG;
 
