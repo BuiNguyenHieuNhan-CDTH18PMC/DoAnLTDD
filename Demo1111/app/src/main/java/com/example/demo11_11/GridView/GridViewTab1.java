@@ -71,6 +71,9 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
     SharedPreferences mPreferences;
     String shareProFile = "com.show_phim.dang_chieu";
     SharedPreferences.Editor editor;
+    EditText editTim;
+    Button btntim;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,11 +82,18 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
         View view = inflater.inflate(R.layout.fragment_grid_view_tab1, container, false);
         mPreferences = this.getActivity().getSharedPreferences(shareProFile,Context.MODE_PRIVATE);
         editor = mPreferences.edit();
+        editTim = view.findViewById(R.id.EditTim);
+        btntim = view.findViewById(R.id.btn_TimTab1);
         recyclerView = (RecyclerView) view.findViewById(R.id.list_phim_tab1);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
         ds = new ArrayList<>();
         json();
-
+        btntim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Tim();
+            }
+        });
         return view;
     }
 
@@ -126,6 +136,54 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
             }
         });
         requestQueue.add(jsonArrayRequest);
+    }
+
+    public void Tim(){
+        String url = "http://192.168.1.103/api_doan/search";
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try{
+                    JSONObject jsonObject = new JSONObject(response);
+                    String success = jsonObject.getString("success");
+                    String message = jsonObject.getString("message");
+                    String idphim = jsonObject.getString("id");
+                    String anhphim = jsonObject.getString("phim_image");
+                    String tenphim = jsonObject.getString("phim_ten");
+                    String thoiluong = jsonObject.getString("phim_thoi_luong_id");
+                    String theloai = jsonObject.getString("ten_the_loai");
+                    String ngaychieu = jsonObject.getString("phim_ngay_cong_chieu");
+                    String noidung = jsonObject.getString("phim_noi_dung");
+                    String daodien = jsonObject.getString("phim_dao_dien");
+                    String dienvien = jsonObject.getString("phim_dien_vien");
+                    String quocgia = jsonObject.getString("phim_quoc_gia");
+                    if(success.equals("1")) {
+                        ListMovie listMovie = new ListMovie(idphim, anhphim, tenphim, theloai, thoiluong, ngaychieu, noidung, daodien, dienvien, quocgia);
+                        ds.add(listMovie);
+                    }
+                    else {
+                        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                    }
+                }catch (Exception e){
+                    Toast.makeText(getContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show();
+                }
+                adapter = new ImageMovieGridAdapter(getContext(),ds);
+                recyclerView.setAdapter(adapter);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }) {
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("phim_ten",editTim.getText().toString().trim());
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
     }
 
     @Override

@@ -34,7 +34,7 @@
         else
         {
             $themTK = "INSERT INTO `tbl_user_manager` (`ho_ten`,`gioi_tinh`,`ngay_sinh`,`sdt`,`tai_khoan`,`mat_khau`) VALUES ('$ho_ten','$gioi_tinh','$ngay_sinh','$sdt','$tai_khoan','$mat_khau')";
-            $add = mysqli_query($connect->getDb(),$themTK);
+            $add = mysqli_query($connect,$themTK);
             if($add)
             {
                 echo"tao thanh cong";

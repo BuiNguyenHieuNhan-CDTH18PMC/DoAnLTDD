@@ -49,16 +49,6 @@ public class ThongTin extends Fragment {
         mPreferences = getActivity().getSharedPreferences(shareProFile, Context.MODE_PRIVATE);
         mPreferences1 = getActivity().getSharedPreferences(shareProFile1, Context.MODE_PRIVATE);
 
-        String image = mPreferences.getString(EXTRA_IMAGE,"null");
-        String tenphim = mPreferences.getString(EXTRA_NAME,"null");
-        String noidung = mPreferences.getString(EXTRA_CONTENT,"null");
-        String ngaychieu = mPreferences.getString(EXTRA_PREMIERE,"null");
-        String theLoai = mPreferences.getString(EXTRA_CATEGORY,"null");
-        String dd = mPreferences.getString(EXTRA_DIRECTORS,"null");
-        String dv = mPreferences.getString(EXTRA_CAST,"null");
-        String tl = mPreferences.getString(EXTRA_TIME,"null");
-        String qg = mPreferences.getString(EXTRA_NATION,"null");
-
         ImageView imageView = view.findViewById(R.id.image_formThongTin_anh);
         ten = view.findViewById(R.id.tv_formThongTin_TenPhim);
         nd = view.findViewById(R.id.tv_formThongTin_NoiDung);
@@ -69,15 +59,53 @@ public class ThongTin extends Fragment {
         thoiluong = view.findViewById(R.id.edit_formThongTin_ThoiLuong);
         quocgia = view.findViewById(R.id.edit_formThongTin_QuocGia);
 
-        Picasso.with(getContext()).load(image).into(imageView);
-        ten.setText(tenphim);
-        nd.setText(noidung);
-        khoichieu.setText(ngaychieu);
-        theloai.setText(theLoai);
-        daodien.setText(dd);
-        dienvien.setText(dv);
-        thoiluong.setText(tl);
-        quocgia.setText(qg);
+        if(mPreferences!= null) {
+            String image = mPreferences.getString(EXTRA_IMAGE, "null");
+            String tenphim = mPreferences.getString(EXTRA_NAME, "null");
+            String noidung = mPreferences.getString(EXTRA_CONTENT, "null");
+            String ngaychieu = mPreferences.getString(EXTRA_PREMIERE, "null");
+            String theLoai = mPreferences.getString(EXTRA_CATEGORY, "null");
+            String dd = mPreferences.getString(EXTRA_DIRECTORS, "null");
+            String dv = mPreferences.getString(EXTRA_CAST, "null");
+            String tl = mPreferences.getString(EXTRA_TIME, "null");
+            String qg = mPreferences.getString(EXTRA_NATION, "null");
+
+            Picasso.with(getContext()).load(image).into(imageView);
+            ten.setText(tenphim);
+            nd.setText(noidung);
+            khoichieu.setText(ngaychieu);
+            theloai.setText(theLoai);
+            daodien.setText(dd);
+            dienvien.setText(dv);
+            thoiluong.setText(tl);
+            quocgia.setText(qg);
+
+            mPreferences.edit().clear();
+        }
+
+        if(mPreferences1!=null) {
+            String image1 = mPreferences1.getString(EXTRA_IMAGE, "null");
+            String tenphim1 = mPreferences1.getString(EXTRA_NAME, "null");
+            String noidung1 = mPreferences1.getString(EXTRA_CONTENT, "null");
+            String ngaychieu1 = mPreferences1.getString(EXTRA_PREMIERE, "null");
+            String theLoai1 = mPreferences1.getString(EXTRA_CATEGORY, "null");
+            String dd1 = mPreferences1.getString(EXTRA_DIRECTORS, "null");
+            String dv1 = mPreferences1.getString(EXTRA_CAST, "null");
+            String tl1 = mPreferences1.getString(EXTRA_TIME, "null");
+            String qg1 = mPreferences1.getString(EXTRA_NATION, "null");
+
+            Picasso.with(getContext()).load(image1).into(imageView);
+            ten.setText(tenphim1);
+            nd.setText(noidung1);
+            khoichieu.setText(ngaychieu1);
+            theloai.setText(theLoai1);
+            daodien.setText(dd1);
+            dienvien.setText(dv1);
+            thoiluong.setText(tl1);
+            quocgia.setText(qg1);
+
+            mPreferences1.edit().clear();
+        }
         return view;
     }
 }

@@ -54,7 +54,7 @@ public class ImageMovieGridAdapter extends RecyclerView.Adapter<ImageMovieGridAd
         viewHolder.tenphim.setText(listMovie.getPhim_ten());
         viewHolder.theloai.setText(listMovie.getTen_the_loai());
         viewHolder.thoiluong.setText(listMovie.getPhim_thoi_luong_id());
-        Picasso.with(context).load(listMovie.getPhim_image()).into(viewHolder.image);
+        Picasso.with(context).load(listMovie.getPhim_image()).error(R.drawable.error).into(viewHolder.image);
     }
 
     @Override
