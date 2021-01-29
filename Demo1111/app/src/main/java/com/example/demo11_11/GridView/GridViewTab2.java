@@ -46,16 +46,16 @@ import static android.widget.Toast.LENGTH_LONG;
 
 
 public class GridViewTab2 extends Fragment implements ImageMovieGridAdapter.OnItemClickListener{
-    public static String EXTRA_ID = "id";
-    public static String EXTRA_NAME = "phim_ten";
-    public static String EXTRA_IMAGE = "phim_image";
-    public static String EXTRA_CONTENT = "phim_noi_dung";
-    public static String EXTRA_PREMIERE = "phim_ngay_khoi_chieu";
-    public static String EXTRA_CATEGORY = "ten_the_loai";
-    public static String EXTRA_DIRECTORS = "phim_dao_dien";
-    public static String EXTRA_CAST = "phim_dien_vien";
-    public static String EXTRA_TIME = "phim_thoi_luong_id";
-    public static String EXTRA_NATION = "phim_quoc_gia";
+    public static String EXTRA_ID1 = "id";
+    public static String EXTRA_NAME1 = "phim_ten";
+    public static String EXTRA_IMAGE1 = "phim_image";
+    public static String EXTRA_CONTENT1 = "phim_noi_dung";
+    public static String EXTRA_PREMIERE1 = "phim_ngay_khoi_chieu";
+    public static String EXTRA_CATEGORY1= "ten_the_loai";
+    public static String EXTRA_DIRECTORS1 = "phim_dao_dien";
+    public static String EXTRA_CAST1 = "phim_dien_vien";
+    public static String EXTRA_TIME1 = "phim_thoi_luong_id";
+    public static String EXTRA_NATION1 = "phim_quoc_gia";
 
     ArrayList<ListMovie> ds;
     RecyclerView recyclerView;
@@ -89,7 +89,7 @@ public class GridViewTab2 extends Fragment implements ImageMovieGridAdapter.OnIt
     }
 
     public void json() {
-        String url = "http://192.168.1.103/api_doan/show_movie_sap_chieu";
+        String url = "http://172.20.10.2/api_doan/show_movie_sap_chieu";
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new com.android.volley.Response.Listener<JSONArray>() {
@@ -131,7 +131,7 @@ public class GridViewTab2 extends Fragment implements ImageMovieGridAdapter.OnIt
     }
 
     public void Tim(){
-        String url = "http://192.168.1.103/api_doan/search_phim_sap_chieu";
+        String url = "http://172.20.10.2/api_doan/search_phim_sap_chieu";
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -184,16 +184,16 @@ public class GridViewTab2 extends Fragment implements ImageMovieGridAdapter.OnIt
     @Override
     public void onItemClick(int position) {
         ListMovie listMovie = ds.get(position);
-        editor.putString(EXTRA_ID,listMovie.getId());
-        editor.putString(EXTRA_CAST,listMovie.getPhim_dien_vien());
-        editor.putString(EXTRA_CATEGORY,listMovie.getTen_the_loai());
-        editor.putString(EXTRA_CONTENT,listMovie.getPhim_noi_dung());
-        editor.putString(EXTRA_DIRECTORS,listMovie.getPhim_dao_dien());
-        editor.putString(EXTRA_IMAGE,listMovie.getPhim_image());
-        editor.putString(EXTRA_NAME,listMovie.getPhim_ten());
-        editor.putString(EXTRA_NATION,listMovie.getPhim_quoc_gia());
-        editor.putString(EXTRA_PREMIERE,listMovie.getPhim_ngay_cong_chieu());
-        editor.putString(EXTRA_TIME,listMovie.getPhim_thoi_luong_id());
+        editor.putString(EXTRA_ID1,listMovie.getId());
+        editor.putString(EXTRA_CAST1,listMovie.getPhim_dien_vien());
+        editor.putString(EXTRA_CATEGORY1,listMovie.getTen_the_loai());
+        editor.putString(EXTRA_CONTENT1,listMovie.getPhim_noi_dung());
+        editor.putString(EXTRA_DIRECTORS1,listMovie.getPhim_dao_dien());
+        editor.putString(EXTRA_IMAGE1,listMovie.getPhim_image());
+        editor.putString(EXTRA_NAME1,listMovie.getPhim_ten());
+        editor.putString(EXTRA_NATION1,listMovie.getPhim_quoc_gia());
+        editor.putString(EXTRA_PREMIERE1,listMovie.getPhim_ngay_cong_chieu());
+        editor.putString(EXTRA_TIME1,listMovie.getPhim_thoi_luong_id());
         editor.apply();
         Intent intent = new Intent(getContext(),form_Chi_Tiet_Phim.class);
         startActivity(intent);

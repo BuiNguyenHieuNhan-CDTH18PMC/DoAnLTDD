@@ -82,30 +82,6 @@ public class ThongTin extends Fragment {
 
             mPreferences.edit().clear();
         }
-
-        if(mPreferences1!=null) {
-            String image1 = mPreferences1.getString(EXTRA_IMAGE, "null");
-            String tenphim1 = mPreferences1.getString(EXTRA_NAME, "null");
-            String noidung1 = mPreferences1.getString(EXTRA_CONTENT, "null");
-            String ngaychieu1 = mPreferences1.getString(EXTRA_PREMIERE, "null");
-            String theLoai1 = mPreferences1.getString(EXTRA_CATEGORY, "null");
-            String dd1 = mPreferences1.getString(EXTRA_DIRECTORS, "null");
-            String dv1 = mPreferences1.getString(EXTRA_CAST, "null");
-            String tl1 = mPreferences1.getString(EXTRA_TIME, "null");
-            String qg1 = mPreferences1.getString(EXTRA_NATION, "null");
-
-            Picasso.with(getContext()).load(image1).into(imageView);
-            ten.setText(tenphim1);
-            nd.setText(noidung1);
-            khoichieu.setText(ngaychieu1);
-            theloai.setText(theLoai1);
-            daodien.setText(dd1);
-            dienvien.setText(dv1);
-            thoiluong.setText(tl1);
-            quocgia.setText(qg1);
-
-            mPreferences1.edit().clear();
-        }
         return view;
     }
 }

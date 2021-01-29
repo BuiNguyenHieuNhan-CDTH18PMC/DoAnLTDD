@@ -98,7 +98,7 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
     }
 
     public void json(){
-        String url = "http://192.168.1.103/api_doan/show_movie_dang_chieu";
+        String url = "http://172.20.10.2/api_doan/show_movie_dang_chieu";
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
@@ -139,7 +139,7 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
     }
 
     public void Tim(){
-        String url = "http://192.168.1.103/api_doan/search";
+        String url = "http://172.20.10.2/api_doan/search";
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override

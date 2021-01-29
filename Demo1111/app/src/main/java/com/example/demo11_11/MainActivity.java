@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                         editor = sharedPreferences.edit();
                         editor.clear();
                         editor.apply();
+                        finish();
                         startActivity(new Intent(MainActivity.this, MainActivity.class));
                         break;
                     }
