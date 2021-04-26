@@ -88,17 +88,18 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
         ds = new ArrayList<>();
         json();
-        btntim.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Tim();
-            }
-        });
+            btntim.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ds.clear();
+                    Tim();
+                }
+            });
         return view;
     }
 
     public void json(){
-        String url = "http://172.20.10.2/api_doan/show_movie_dang_chieu";
+        String url = "http://192.168.1.103/api_doan/show_movie_dang_chieu";
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
@@ -139,7 +140,7 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
     }
 
     public void Tim(){
-        String url = "http://172.20.10.2/api_doan/search";
+        String url = "http://192.168.1.103/api_doan/search";
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -166,7 +167,7 @@ public class GridViewTab1 extends Fragment implements ImageMovieGridAdapter.OnIt
                         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
                     }
                 }catch (Exception e){
-                    Toast.makeText(getContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Phim ko tồn tại", Toast.LENGTH_SHORT).show();
                 }
                 adapter = new ImageMovieGridAdapter(getContext(),ds);
                 recyclerView.setAdapter(adapter);
